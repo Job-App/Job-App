@@ -16,8 +16,9 @@ import {
   StatusBar,
 } from 'react-native';
 
+import HeaderBar from './src/components/HeaderBar/Headerbar';
+
 import {
-  Header,
   LearnMoreLinks,
   Colors,
   DebugInstructions,
@@ -32,7 +33,7 @@ const App: () => React$Node = () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <Header />
+          <HeaderBar />
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
               <Text style={styles.footer}>Engine: Hermes</Text>
