@@ -24,7 +24,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+import 'react-native-gesture-handler';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import NewJobAppRecord from './NewJobAppRecord.js'
+
+/*const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -109,6 +114,21 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
-});
+});*/
+
+const Stack = createStackNavigator()
+
+
+  const App = () => {
+    return (
+               <NavigationContainer>
+                 <Stack.Navigator initialRouteName="NewJobAppRecord">
+                   <Stack.Screen name="NewJobAppRecord" component={NewJobAppRecord} />
+                 </Stack.Navigator>
+               </NavigationContainer>
+             );
+  }
+
 
 export default App;
+
