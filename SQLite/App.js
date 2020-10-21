@@ -1,15 +1,65 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+import NewApp from './pages/NewApp';
+import HomeScreen from './pages/HomeScreen';
+
+
+
+const Stack = createStackNavigator();
+
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName = "HomeScreen">
+    <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{
+            title: 'Home', //Set Header Title
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+        }}
+      />
+      <Stack.Screen
+        name="NewApp"
+        component={NewApp}
+        options={{
+            title: 'New Application', //Set Header Title
+            headerStyle: {
+                backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+                fontWeight: 'bold', //Set Header text style
+            },
+        }}
+      />
+    </Stack.Navigator>
+  </NavigationContainer>
+
+
+
+
+
+
+
+   /* <View style={styles.container}>
+      <Text>Open up App.js to start worokg on your app!</Text>
       <StatusBar style="auto" />
-    </View>
+    </View>*/
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -19,3 +69,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+export default App;
