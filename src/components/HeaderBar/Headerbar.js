@@ -6,6 +6,8 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
+import { Button } from 'react-native';
+
 
 const {width, height} = Dimensions.get('screen');
 
@@ -15,7 +17,8 @@ const HeaderBar = () => {
             <View style={[styles.buttonContainer,styles.buttonContainerLeft]}>
                 <TouchableOpacity
                     activeOpacity={.8}
-                    style={styles.button}>
+                    style={styles.button}
+                    onPress={() => navigation.navigate(HeaderBar)}>
                         <Text style={styles.plus}>Add</Text>
                 </TouchableOpacity>
             </View>
