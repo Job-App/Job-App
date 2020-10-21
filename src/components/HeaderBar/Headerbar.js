@@ -6,16 +6,19 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
+import { Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 const {width, height} = Dimensions.get('screen');
 
-const HeaderBar = () => {
+const HeaderBar = ({navigation}) => {
     return(
         <View style={styles.container}>
             <View style={[styles.buttonContainer,styles.buttonContainerLeft]}>
                 <TouchableOpacity
                     activeOpacity={.8}
-                    style={styles.button}>
+                    style={styles.button}
+                    onPress={() => navigation.navigate('HeaderBar')}>
                         <Text style={styles.plus}>Add</Text>
                 </TouchableOpacity>
             </View>
@@ -65,4 +68,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default HeaderBar;
+export default withNavigation(HeaderBar);
