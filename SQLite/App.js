@@ -77,6 +77,20 @@ export default function App(){
             },
         }}
       />
+      <Stack.Screen
+        name="UpdateApp"
+        component={UpdateApp}
+        options={{
+            title: 'Update Applications', 
+            headerStyle: {
+                backgroundColor: '#f4511e', 
+            },
+            headerTintColor: '#fff', 
+            headerTitleStyle: {
+                fontWeight: 'bold', 
+            },
+        }}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 

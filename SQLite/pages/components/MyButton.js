@@ -1,8 +1,7 @@
-// JavaScript source code
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const MyButton = (props) => {
+const Mybutton = (props) => {
   return (
     <TouchableOpacity style={styles.button} onPress={props.customClick}>
       <Text style={styles.text}>{props.title}</Text>
@@ -25,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyButton;
+export default Mybutton;
