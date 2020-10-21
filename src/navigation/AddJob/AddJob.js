@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 const AddJob = () => {
+
   return (
     <View
       style={{
@@ -13,4 +14,6 @@ const AddJob = () => {
     </View>
   )
 }
+
 export default AddJob;
+

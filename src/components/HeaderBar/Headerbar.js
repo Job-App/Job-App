@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
-import { Button } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
 const {width, height} = Dimensions.get('screen');
