@@ -13,7 +13,7 @@ const AddJob = ({navigation}) => {
     <>
       <HeaderBar
          navigation={Stack}
-         left="" leftNav=""
+         left="Back" leftNav="Homepage"
          right="" rightNav="" />
       <Text style={styles.text}>Add Job</Text>
       <View style={styles.formContainer}>
@@ -27,10 +27,11 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 36,
     fontWeight: 'bold',
-    margin: 12
+    margin: 24,
+    marginBottom: 12
   },
   formContainer: {
-    width: width - 24,
+    width: width - 48,
     alignSelf: 'center',
   }
 });
