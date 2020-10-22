@@ -1,63 +1,75 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
+  SafeAreaView,
   View,
   Text,
   StyleSheet,
   Dimensions,
+  FlatList
 } from 'react-native';
+import { openDatabase } from "react-native-sqlite-storage";
 
-import Cards from './../Cards/Cards';
+import Cards from './../../components/Cards/Cards';
 
 const {width, height} = Dimensions.get('screen');
 
-const mapCards = () => {
-    const arr = [{
-        id: 1,
-        company: "Apple",
-        title: "Software Engineer",
-        closing: "10/22/2020"
-    },{
-        id: 2,
-        company: "Google",
-        title: "SWE",
-        closing: "10/23/2020"
-    },{
-        id: 3,
-        company: "Netflix",
-        title: "SDE",
-        closing: "10/24/2020"
-    }]
-
-    return arr.map((item) => {
-        return (
-            <Cards
-            id={item.id}
-            company={item.company}
-            title={item.title}
-            closing={item.closing} />
-        );
-    });
+const nameConfig = {
+    active: `WHERE applied = ''`,
+    inactive: `WHERE NOT applied = ''`
 }
 
+var db = openDatabase('table_applications.db' );
 const Folders = (props) => {
+    let [flatListItems, setFlatListItems] = useState([]);
+
+    const sqlQuery = `
+        SELECT job_id, Company, Title, Deadline, Applied
+        FROM table_applications ` +
+        nameConfig[props.name.toLowerCase()]
+    useEffect(() => {
+        db.transaction((tx) => {
+          tx.executeSql(sqlQuery, [], (tx, results) => {
+            var temp = [];
+            for (let i = 0; i < results.rows.length; ++i)
+              temp.push(results.rows.item(i));
+            setFlatListItems(temp);
+          });         
+        });
+      }, []);
+      console.log(flatListItems)
+      let listItemView = (item) => {
+        return (
+            <Cards
+                key={item.id}
+                company={item.company}
+                title={item.title}
+                closing={item.deadline} />
+        );
+      };
+
     return(
         <View style={styles.container}>
             <Text style={[styles.text,styles.title]}>{props.name}</Text>
-            {mapCards()}
+            <FlatList
+                    data={flatListItems}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => listItemView(item)}
+                />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: width - 48,
+        width: width - 12,
         alignSelf: 'center',
         marginTop: 24,
-        borderWidth: 1,
+        // borderWidth: 1,
         paddingBottom: 24
     },
     text: {
         margin: 12,
+        marginLeft: 24,
         marginBottom: 0
     },
     title: {

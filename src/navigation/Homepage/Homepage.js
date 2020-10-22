@@ -37,6 +37,8 @@ const Homepage = () => {
         )}
 
         <Folders name="Active" />
+        <Folders name="Inactive" />
+        <View style={{margin: 12}} />
         </ScrollView>
     </SafeAreaView>
     </>
