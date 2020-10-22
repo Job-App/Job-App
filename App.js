@@ -23,16 +23,16 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-const Stack = createStackNavigator()
 
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import NewJobAppRecord from './NewJobAppRecord.js'
-
 import HeaderBar from './src/components/HeaderBar/Headerbar';
 import Folders from './src/components/Folders/Folders';
+import AddJob from './src/navigation/AddJob/AddJob';
+import Login from './src/navigation/Login/Login';
 
+const Stack = createStackNavigator()
 function HeaderBarScreen({ navigation }) {
   return (
     <>
@@ -41,7 +41,8 @@ function HeaderBarScreen({ navigation }) {
            <ScrollView
              contentInsetAdjustmentBehavior="automatic"
              style={styles.scrollView}>
-             <HeaderBar />
+
+             <HeaderBar navigation={Stack} />
 
              {global.HermesInternal == null ? null : (
                <View style={styles.engine}>
@@ -56,11 +57,25 @@ function HeaderBarScreen({ navigation }) {
   );
 }
 
+function AddJobScreen() {
+    return (
+        <AddJob />
+    )
+}
+
+function LoginScreen() {
+    return (
+        <Login />
+    )
+}
+
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
      <Stack.Navigator initialRouteName="HeaderBar" screenOptions={{ headerShown: false}}>
              <Stack.Screen name="HeaderBar" component={HeaderBarScreen} />
+             <Stack.Screen name="AddJob" component={AddJobScreen} />
+             <Stack.Screen name="Login" component={LoginScreen} />
      </Stack.Navigator>
     </NavigationContainer>
   );
@@ -105,21 +120,4 @@ const styles = StyleSheet.create({
   },
 });
 
-/*
-const Stack = createStackNavigator()
-
-
-  const App = () => {
-    return (
-               <NavigationContainer>
-                 <Stack.Navigator initialRouteName="NewJobAppRecord">
-                   <Stack.Screen name="NewJobAppRecord" component={NewJobAppRecord} />
-                 </Stack.Navigator>
-               </NavigationContainer>
-             );
-  }
-*/
-
-
 export default App;
-
