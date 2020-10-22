@@ -20,8 +20,10 @@
     "react-native-reanimated": "^1.13.1",
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.11.0",
+    "react-native-sqlite-storage": "^5.0.0",
     "react-navigation": "^4.4.2",
     "react-navigation-stack": "^2.8.4",
+    "sqlite3": "^5.0.0",
     "typescript": "^4.0.3",
     "yarn": "^1.22.10",
     "yup": "^0.29.3"
