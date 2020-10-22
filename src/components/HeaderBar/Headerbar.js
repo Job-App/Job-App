@@ -12,8 +12,9 @@ import { useNavigation } from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('screen');
 
-function HeaderBar(){
+const HeaderBar = () => {
     const navigation = useNavigation();
+
     return(
         <View style={styles.container}>
             <View style={[styles.buttonContainer,styles.buttonContainerLeft]}>
@@ -66,8 +67,7 @@ const styles = StyleSheet.create({
     },
     plus: {
         color: '#E0E2DB',
-        fontSize: 24
-
+        fontSize: 24,
     }
   });
 

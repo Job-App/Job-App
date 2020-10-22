@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import JobForm from './../../components/JobForm/JobForm'
 
 const AddJob = ({navigation}) => {
 
@@ -10,7 +11,7 @@ const AddJob = ({navigation}) => {
         justifyContent: "center",
         alignItems: "center"
       }}>
-      <Text>AddJob</Text>
+      <JobForm />
     </View>
   )
 }
