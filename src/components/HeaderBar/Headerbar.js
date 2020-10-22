@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('screen');
 
-const HeaderBar = () => {
+const HeaderBar = (props) => {
     const navigation = useNavigation();
 
     return(
@@ -21,16 +21,16 @@ const HeaderBar = () => {
                 <TouchableOpacity
                     activeOpacity={.8}
                     style={styles.button}
-                    onPress={() => navigation.navigate('AddJob')}>
-                        <Text style={styles.plus}>Add</Text>
+                    onPress={() => navigation.navigate(props.leftNav)}>
+                        <Text style={styles.plus}>{props.left}</Text>
                 </TouchableOpacity>
             </View>
             <View style={[styles.buttonContainer,styles.buttonContainerRight]}>
                 <TouchableOpacity
                     activeOpacity={.8}
                     style={styles.button}
-                    onPress={() => navigation.navigate('Login')}>
-                        <Text style={styles.plus}>Login</Text>
+                    onPress={() => navigation.navigate(props.rightNav)}>
+                        <Text style={styles.plus}>{props.right}</Text>
                 </TouchableOpacity>
             </View>
         </View>

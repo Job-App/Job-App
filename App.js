@@ -42,7 +42,10 @@ function HeaderBarScreen({ navigation }) {
              contentInsetAdjustmentBehavior="automatic"
              style={styles.scrollView}>
 
-             <HeaderBar navigation={Stack} />
+             <HeaderBar
+                navigation={Stack}
+                left="Add" leftNav="AddJob"
+                right="Login" rightNav="Login" />
 
              {global.HermesInternal == null ? null : (
                <View style={styles.engine}>
