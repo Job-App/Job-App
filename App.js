@@ -63,12 +63,19 @@ function AddJobScreen() {
     )
 }
 
+function LoginScreen() {
+    return (
+        <Login />
+    )
+}
+
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
      <Stack.Navigator initialRouteName="HeaderBar" screenOptions={{ headerShown: false}}>
              <Stack.Screen name="HeaderBar" component={HeaderBarScreen} />
              <Stack.Screen name="AddJob" component={AddJobScreen} />
+             <Stack.Screen name="Login" component={LoginScreen} />
      </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const AddJob = () => {
+const AddJob = ({navigation}) => {
 
   return (
     <View
@@ -10,7 +10,7 @@ const AddJob = () => {
         justifyContent: "center",
         alignItems: "center"
       }}>
-      <Text>Hello, world!</Text>
+      <Text>AddJob</Text>
     </View>
   )
 }

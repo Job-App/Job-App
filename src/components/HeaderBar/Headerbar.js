@@ -7,24 +7,28 @@ import {
   Dimensions,
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('screen');
 
-const HeaderBar = ({navigation}) => {
+function HeaderBar(){
+    const navigation = useNavigation();
     return(
         <View style={styles.container}>
             <View style={[styles.buttonContainer,styles.buttonContainerLeft]}>
                 <TouchableOpacity
                     activeOpacity={.8}
                     style={styles.button}
-                    onPress={() => navigation.navigate('HeaderBar')}>
+                    onPress={() => navigation.navigate('AddJob')}>
                         <Text style={styles.plus}>Add</Text>
                 </TouchableOpacity>
             </View>
             <View style={[styles.buttonContainer,styles.buttonContainerRight]}>
                 <TouchableOpacity
                     activeOpacity={.8}
-                    style={styles.button}>
+                    style={styles.button}
+                    onPress={() => navigation.navigate('Login')}>
                         <Text style={styles.plus}>Login</Text>
                 </TouchableOpacity>
             </View>
