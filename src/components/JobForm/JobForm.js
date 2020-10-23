@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 // import { withNavigation } from 'react-navigation';
 // import { NavigationContainer } from '@react-navigation/native';
-// import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native'
 // import { Formik } from 'formik';
 // import { StatusBar } from 'expo-status-bar';
 import { openDatabase } from 'react-native-sqlite-storage'
@@ -35,6 +35,8 @@ const emptyInput = {
 }
 
 const JobForm = () => {
+    const navigation = useNavigation()
+
     const db = openDatabase('table_applications.db')
 
     let [company, setCompany] = useState('')
@@ -63,6 +65,9 @@ const JobForm = () => {
                             'Your job application was successfully submitted',
                             [
                                 {
+                                    text: 'Add another'
+                                },
+                                {
                                     text: 'Ok',
                                     onPress: () =>
                                         navigation.navigate('HomeScreen'),
@@ -70,6 +75,8 @@ const JobForm = () => {
                             ],
                             { cancelable: false }
                         )
+
+                        setCompany('')
                     } else Alert.alert('Error', 'Submission Failed')
                 }
             )
@@ -96,6 +103,7 @@ const JobForm = () => {
                     // onBlur={handleBlur('company')}
                     // value={values.company}
                     onChangeText={(company) => setCompany(company)}
+                    clearButtonMode='always'
                 />
                 <TextInput
                     styles={styles.input}
@@ -103,6 +111,7 @@ const JobForm = () => {
                     // onBlur={handleBlur('title')}
                     // value={values.title}
                     onChangeText={(title) => setTitle(title)}
+                    clearButtonMode='always'
                 />
                 <TextInput
                     styles={styles.input}
@@ -110,6 +119,7 @@ const JobForm = () => {
                     // onBlur={handleBlur('deadline')}
                     // value={values.deadline}
                     onChangeText={(deadline) => setDeadline(deadline)}
+                    clearButtonMode='always'
                 />
                 <TextInput
                     styles={styles.input}
@@ -117,6 +127,7 @@ const JobForm = () => {
                     // onBlur={handleBlur('applied')}
                     // value={values.applied}
                     onChangeText={(applied) => setApplied(applied)}
+                    clearButtonMode='always'
                 />
                 <TextInput
                     styles={styles.input}
@@ -124,6 +135,7 @@ const JobForm = () => {
                     // onBlur={handleBlur('link')}
                     // value={values.link}
                     onChangeText={(link) => setLink(link)}
+                    clearButtonMode='always'
                 />
                 <Button onPress={jobForm} title="Submit" />
             </View>
