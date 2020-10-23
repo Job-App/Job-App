@@ -1,36 +1,36 @@
-import React from 'react';
+import React from 'react'
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
-import { withNavigation } from 'react-navigation';
-import { NavigationContainer } from '@react-navigation/native';
-import { useNavigation } from '@react-navigation/native';
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    Dimensions,
+} from 'react-native'
+import { withNavigation } from 'react-navigation'
+import { NavigationContainer } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
-const {width, height} = Dimensions.get('screen');
+const { width, height } = Dimensions.get('screen')
 
 const HeaderBar = (props) => {
-    const navigation = useNavigation();
+    const navigation = useNavigation()
 
-    return(
+    return (
         <View style={styles.container}>
-            <View style={[styles.buttonContainer,styles.buttonContainerLeft]}>
+            <View style={[styles.buttonContainer, styles.buttonContainerLeft]}>
                 <TouchableOpacity
-                    activeOpacity={.8}
+                    activeOpacity={0.8}
                     style={styles.button}
                     onPress={() => navigation.navigate(props.leftNav)}>
-                        <Text style={styles.plus}>{props.left}</Text>
+                    <Text style={styles.plus}>{props.left}</Text>
                 </TouchableOpacity>
             </View>
-            <View style={[styles.buttonContainer,styles.buttonContainerRight]}>
+            <View style={[styles.buttonContainer, styles.buttonContainerRight]}>
                 <TouchableOpacity
-                    activeOpacity={.8}
+                    activeOpacity={0.8}
                     style={styles.button}
                     onPress={() => navigation.navigate(props.rightNav)}>
-                        <Text style={styles.plus}>{props.right}</Text>
+                    <Text style={styles.plus}>{props.right}</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -40,20 +40,20 @@ const HeaderBar = (props) => {
 const styles = StyleSheet.create({
     container: {
         width: width,
-        height: height/12,
+        height: height / 12,
         backgroundColor: '#3D348B',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     buttonContainer: {
         flex: 1,
         marginTop: 'auto',
-        marginBottom: 10
+        marginBottom: 10,
     },
     buttonContainerLeft: {
         alignItems: 'flex-start',
     },
     buttonContainerRight: {
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
     },
     button: {
         // backgroundColor: '#E6AF2E',
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     plus: {
         color: '#E0E2DB',
         fontSize: 24,
-    }
-  });
+    },
+})
 
-export default withNavigation(HeaderBar);
+export default withNavigation(HeaderBar)
