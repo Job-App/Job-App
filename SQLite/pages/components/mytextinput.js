@@ -1,18 +1,24 @@
-import React from 'react';
-import { TouchableHighlight, Text, StyleSheet } from 'react-native';
+/*import React from 'react';
+import { TouchableHighlight, Text, StyleSheet,View, TextInput } from 'react-native';
 
 const Mytext = (props) => {
-  return <Text style={styles.text}>{props.text}</Text>;
+   return (
+   <View>
+      <TextInput
+        underlineColorAndroid="transparent"
+        placeholder={props.placeholder}
+        placeholderTextColor="#007FFF"
+        keyboardType={props.keyboardType}
+        onChangeText={props.onChangeText}
+        returnKeyType={props.returnKeyType}
+        numberOfLines={props.numberOfLines}
+        multiline={props.multiline}
+        onSubmitEditing={props.onSubmitEditing}
+        style={props.style}
+        blurOnSubmit={false}
+        value={props.value}
+      />
+    </View>
+  );
 };
-
-const styles = StyleSheet.create({
-  text: {
-    color: '#fcba03',
-    fontSize: 18,
-    marginTop: 16,
-    marginLeft: 35,
-    marginRight: 35,
-  },
-});
-
-export default Mytext;
+default Mytext;*/

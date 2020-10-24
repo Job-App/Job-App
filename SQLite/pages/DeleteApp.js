@@ -17,7 +17,9 @@ const DeleteApp = ({ navigation }) => {
         (tx, results) => {
           console.log('ResultsDelete', results.rowsAffected);
           if (results.rowsAffected > 0) {
-            alert('Job Application Deleted Successfully',
+            Alert.alert(
+            'Success',
+            'Job Application Deleted Successfully',
               [
                 {
                   text: 'Ok',
@@ -27,18 +29,13 @@ const DeleteApp = ({ navigation }) => {
               { cancelable: false }
             );
           } else {
-            alert('Please insert a valid Job Id');
+            Alert.alert(
+            'Error',
+            'Please insert a valid Job Id');
           }
         }
-      ); 
-
-       tx.executeSql(
-          "select * from table_applications",
-          [],
-          (_, { rows: { _array } }) => console.log( _array),
-          () => console.log("error fetching")
-        );
-    });
+      )
+    }); 
   }
 
   let deleteAll = () =>{
@@ -49,7 +46,9 @@ const DeleteApp = ({ navigation }) => {
         (tx, results) => {
           console.log('ResultsDeleteAll', results.rowsAffected);
           if (results.rowsAffected > 0) {
-            alert('All Job Application Deleted Successfully',
+            Alet.alert(
+            'Success',
+            'All Job Application Deleted Successfully',
               [
                 {
                   text: 'Ok',
@@ -59,7 +58,9 @@ const DeleteApp = ({ navigation }) => {
               { cancelable: false }
             );
           } else {
-            alert('Failure to Delete all Applications');
+            Alert.alert(
+            'Error',
+            'Failure to Delete all Applications');
           }
         }
       );
