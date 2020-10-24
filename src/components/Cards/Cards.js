@@ -24,21 +24,18 @@ const Cards = (props) => {
             <View style={cardStyles.container}>
                 <View style={cardStyles.companyContainer}>
                     <Text style={cardStyles.jobText}>
-                        {' '}
-                        {props.company || 'N/A'}{' '}
+                        {props.company || 'N/A'}
                     </Text>
                 </View>
                 <View style={cardStyles.jobInfoContainer}>
                     <Text style={cardStyles.text}>
-                        {' '}
-                        {props.title || 'N/A'}{' '}
-                    </Text>{' '}
+                        {props.title || 'N/A'}
+                    </Text>
                     <Text style={cardStyles.text}>
-                        {' '}
-                        {props.closing || 'N/A'}{' '}
-                    </Text>{' '}
-                </View>{' '}
-            </View>{' '}
+                        {props.closing || 'N/A'}
+                    </Text>
+                </View>
+            </View>
         </TouchableOpacity>
     )
 }
