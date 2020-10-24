@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-    SafeAreaView,
-    View,
-    Text,
-    StyleSheet,
-    Dimensions,
-    FlatList,
-} from 'react-native'
+import { View, Text, StyleSheet, Dimensions, FlatList } from 'react-native'
 import { openDatabase } from 'react-native-sqlite-storage'
 
 import Cards from './../../components/Cards/Cards'
@@ -28,7 +21,7 @@ const Folders = (props) => {
         FROM table_applications ` + nameConfig[props.name.toLowerCase()]
     useEffect(() => {
         db.transaction((tx) => {
-            tx.executeSql(sqlQuery, [], (tx, results) => {
+            tx.executeSql(sqlQuery, [], (txR, results) => {
                 var temp = []
                 for (let i = 0; i < results.rows.length; ++i)
                     temp.push(results.rows.item(i))
