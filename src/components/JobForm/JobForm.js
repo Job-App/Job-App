@@ -1,8 +1,6 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import {
     View,
-    Text,
-    TouchableOpacity,
     StyleSheet,
     Dimensions,
     Button,
@@ -46,7 +44,7 @@ const JobForm = () => {
     let [link, setLink] = useState('')
 
     let jobForm = () => {
-        db.transaction(function (tx) {
+        db.transaction((tx) => {
             tx.executeSql(
                 //"create table if not exists DataTable (id integer primary key not null, column_1 int, column_2 int, column_3 text);",
                 'CREATE TABLE IF NOT EXISTS table_applications(job_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(225), company VARCHAR(225), deadline VARCHAR(40), applied VARCHAR(40), link VARCHAR(225));',
@@ -56,7 +54,7 @@ const JobForm = () => {
             tx.executeSql(
                 'INSERT INTO table_applications (title, company, deadline, applied, link) VALUES (?,?,?,?,?)',
                 [title, company, deadline, applied, link],
-                (tx, results) => {
+                (txR, results) => {
                     if (results.rowsAffected > 0) {
                         //CHECK: alert isn't working insert console.log here
                         console.log('ResultsAdded', results.rowsAffected)
@@ -65,7 +63,7 @@ const JobForm = () => {
                             'Your job application was successfully submitted',
                             [
                                 {
-                                    text: 'Add another'
+                                    text: 'Add another',
                                 },
                                 {
                                     text: 'Ok',
@@ -102,40 +100,40 @@ const JobForm = () => {
                     placeholder="company"
                     // onBlur={handleBlur('company')}
                     // value={values.company}
-                    onChangeText={(company) => setCompany(company)}
-                    clearButtonMode='always'
+                    onChangeText={(companyI) => setCompany(companyI)}
+                    clearButtonMode="always"
                 />
                 <TextInput
                     styles={styles.input}
                     placeholder="title"
                     // onBlur={handleBlur('title')}
                     // value={values.title}
-                    onChangeText={(title) => setTitle(title)}
-                    clearButtonMode='always'
+                    onChangeText={(titleI) => setTitle(titleI)}
+                    clearButtonMode="always"
                 />
                 <TextInput
                     styles={styles.input}
                     placeholder="deadline"
                     // onBlur={handleBlur('deadline')}
                     // value={values.deadline}
-                    onChangeText={(deadline) => setDeadline(deadline)}
-                    clearButtonMode='always'
+                    onChangeText={(deadlineI) => setDeadline(deadlineI)}
+                    clearButtonMode="always"
                 />
                 <TextInput
                     styles={styles.input}
                     placeholder="applied"
                     // onBlur={handleBlur('applied')}
                     // value={values.applied}
-                    onChangeText={(applied) => setApplied(applied)}
-                    clearButtonMode='always'
+                    onChangeText={(appliedI) => setApplied(appliedI)}
+                    clearButtonMode="always"
                 />
                 <TextInput
                     styles={styles.input}
                     placeholder="link"
                     // onBlur={handleBlur('link')}
                     // value={values.link}
-                    onChangeText={(link) => setLink(link)}
-                    clearButtonMode='always'
+                    onChangeText={(linkI) => setLink(linkI)}
+                    clearButtonMode="always"
                 />
                 <Button onPress={jobForm} title="Submit" />
             </View>
