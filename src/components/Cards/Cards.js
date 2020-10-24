@@ -10,8 +10,6 @@ import { withNavigation } from 'react-navigation'
 import { NavigationContainer } from '@react-navigation/native'
 import { useNavigation } from '@react-navigation/native'
 
-import JobDetails from '../../navigation/JobDetails/JobDetails';
-
 const {width, height} = Dimensions.get('screen');
 
 const Cards = (props) => {
