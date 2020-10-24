@@ -40,7 +40,7 @@ const Folders = (props) => {
       let listItemView = (item) => {
         return (
             <Cards
-                key={item.id}
+                key={item.job_id}
                 company={item.company}
                 title={item.title}
                 closing={item.deadline} />
