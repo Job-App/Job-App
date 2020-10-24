@@ -7,7 +7,6 @@ import {
     Dimensions,
 } from 'react-native'
 import { withNavigation } from 'react-navigation'
-import { NavigationContainer } from '@react-navigation/native'
 import { useNavigation } from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('screen')
