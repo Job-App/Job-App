@@ -216,15 +216,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable */
-var jumpToCode = <span class="cstat-no" title="statement not covered" >(function <span class="fstat-no" title="function not covered" >init(</span>) {</span>
+var jumpToCode = <span class="cstat-no" title="statement not covered" >(function<span class="fstat-no" title="function not covered" > init</span>() {</span>
     // Classes of code we would like to highlight in the file view
-    var missingCoverageClasses = <span class="cstat-no" title="statement not covered" >['.cbranch-no', '.cstat-no', '.fstat-no'];</span>
+    var missingCoverageClasses <span class="cstat-no" title="statement not covered" >= ['.cbranch-no', '.cstat-no', '.fstat-no'</span>];
 &nbsp;
     // Elements to highlight in the file listing view
-    var fileListingElements = <span class="cstat-no" title="statement not covered" >['td.pct.low'];</span>
+    var fileListingElements <span class="cstat-no" title="statement not covered" >= ['td.pct.low'</span>];
 &nbsp;
     // We don't want to select elements that are direct descendants of another match
-    var notSelector = <span class="cstat-no" title="statement not covered" >':not(' + missingCoverageClasses.join('):not(') + ') &gt; ';</span> // becomes `:not(a):not(b) &gt; `
+    var notSelector <span class="cstat-no" title="statement not covered" >= ':not(' + missingCoverageClasses.join('):not(') + ') &gt; </span>'; // becomes `:not(a):not(b) &gt; `
 &nbsp;
     // Selecter that finds elements on the page to which we can jump
     var selector =
@@ -234,20 +234,20 @@ var jumpToCode = <span class="cstat-no" title="statement not covered" >(function
         missingCoverageClasses.join(', ' + notSelector); // becomes `:not(a):not(b) &gt; a, :not(a):not(b) &gt; b`
 &nbsp;
     // The NodeList of matching elements
-    var missingCoverageElements = <span class="cstat-no" title="statement not covered" >document.querySelectorAll(selector);</span>
+    var missingCoverageElements <span class="cstat-no" title="statement not covered" >= document.querySelectorAll(selector</span>);
 &nbsp;
     var currentIndex;
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >toggleClass(</span>index) {
+    functio<span class="fstat-no" title="function not covered" >n toggleClas</span>s(index) {
 <span class="cstat-no" title="statement not covered" >        missingCoverageElements</span>
             .item(currentIndex)
             .classList.remove('highlighted');
-<span class="cstat-no" title="statement not covered" >        missingCoverageElements.item(index).classList.add('highlighted');</span>
+<span class="cstat-no" title="statement not covered" >        missingCoverageElements.item(index).classList.add('highlighted</span>');
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >makeCurrent(</span>index) {
-<span class="cstat-no" title="statement not covered" >        toggleClass(index);</span>
-<span class="cstat-no" title="statement not covered" >        currentIndex = index;</span>
+    functio<span class="fstat-no" title="function not covered" >n makeCurren</span>t(index) {
+<span class="cstat-no" title="statement not covered" >        toggleClass(inde</span>x);
+<span class="cstat-no" title="statement not covered" >        currentIndex = ind</span>ex;
 <span class="cstat-no" title="statement not covered" >        missingCoverageElements.item(index).scrollIntoView({</span>
             behavior: 'smooth',
             block: 'center',
@@ -255,41 +255,41 @@ var jumpToCode = <span class="cstat-no" title="statement not covered" >(function
         });
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >goToPrevious(</span>) {
-        var nextIndex = <span class="cstat-no" title="statement not covered" >0;</span>
+    functio<span class="fstat-no" title="function not covered" >n goToPreviou</span>s() {
+        var nextInde<span class="cstat-no" title="statement not covered" >x </span>= 0;
 <span class="cstat-no" title="statement not covered" >        if (typeof currentIndex !== 'number' || currentIndex === 0) {</span>
-<span class="cstat-no" title="statement not covered" >            nextIndex = missingCoverageElements.length - 1;</span>
-        } else <span class="cstat-no" title="statement not covered" >if (missingCoverageElements.length &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >            nextIndex = currentIndex - 1;</span>
+<span class="cstat-no" title="statement not covered" >            nextIndex = missingCoverageElements.length</span> - 1;
+        } e<span class="cstat-no" title="statement not covered" >lse if (missingCoverageElements.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >            nextIndex = currentIndex</span> - 1;
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        makeCurrent(nextIndex);</span>
+<span class="cstat-no" title="statement not covered" >        makeCurrent(nextInde</span>x);
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >goToNext(</span>) {
-        var nextIndex = <span class="cstat-no" title="statement not covered" >0;</span>
+    functio<span class="fstat-no" title="function not covered" >n goToNex</span>t() {
+        var nextInde<span class="cstat-no" title="statement not covered" >x </span>= 0;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (</span>
             typeof currentIndex === 'number' &amp;&amp;
             currentIndex &lt; missingCoverageElements.length - 1
         ) {
-<span class="cstat-no" title="statement not covered" >            nextIndex = currentIndex + 1;</span>
+<span class="cstat-no" title="statement not covered" >            nextIndex = currentIndex</span> + 1;
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        makeCurrent(nextIndex);</span>
+<span class="cstat-no" title="statement not covered" >        makeCurrent(nextInde</span>x);
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return function <span class="fstat-no" title="function not covered" >jump(</span>event) {</span>
+<span class="cstat-no" title="statement not covered" >    return functio<span class="fstat-no" title="function not covered" >n jum</span>p(event) {</span>
 <span class="cstat-no" title="statement not covered" >        switch (event.which) {</span>
             case 78: // n
             case 74: // j
-<span class="cstat-no" title="statement not covered" >                goToNext();</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered" >                goTo</span>Next();
+<span class="cstat-no" title="statement not covered" ></span>                break;
             case 66: // b
             case 75: // k
             case 80: // p
-<span class="cstat-no" title="statement not covered" >                goToPrevious();</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered" >                goToPrev</span>ious();
+<span class="cstat-no" title="statement not covered" ></span>                break;
         }
     };
 })();
@@ -301,7 +301,7 @@ var jumpToCode = <span class="cstat-no" title="statement not covered" >(function
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 22 2020 05:31:36 GMT-0400 (Eastern Daylight Time)
+                at Sun Oct 25 2020 10:32:51 GMT-0700 (Pacific Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

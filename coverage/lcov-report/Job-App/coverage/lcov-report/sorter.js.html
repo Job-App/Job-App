@@ -398,171 +398,171 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable */
-var addSorting = <span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >fu</span>nction() {</span>
+var addSorting = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(f</span>unction() {</span>
     'use strict';
     var cols,
-        currentSort = <span class="cstat-no" title="statement not covered" >{</span>
+        currentS<span class="cstat-no" title="statement not covered" >ort = {</span>
             index: 0,
             desc: false
         };
 &nbsp;
     // returns the summary table element
-    function <span class="fstat-no" title="function not covered" >getTable(</span>) {
-<span class="cstat-no" title="statement not covered" >        return document.querySelector('.coverage-summary');</span>
+    functio<span class="fstat-no" title="function not covered" >n getTabl</span>e() {
+<span class="cstat-no" title="statement not covered" >        return document.querySelector('.coverage-summary</span>');
     }
     // returns the thead element of the summary table
-    function <span class="fstat-no" title="function not covered" >getTableHeader(</span>) {
-<span class="cstat-no" title="statement not covered" >        return getTable().querySelector('thead tr');</span>
+    functio<span class="fstat-no" title="function not covered" >n getTableHeade</span>r() {
+<span class="cstat-no" title="statement not covered" >        return getTable().querySelector('thead tr</span>');
     }
     // returns the tbody element of the summary table
-    function <span class="fstat-no" title="function not covered" >getTableBody(</span>) {
-<span class="cstat-no" title="statement not covered" >        return getTable().querySelector('tbody');</span>
+    functio<span class="fstat-no" title="function not covered" >n getTableBod</span>y() {
+<span class="cstat-no" title="statement not covered" >        return getTable().querySelector('tbody</span>');
     }
     // returns the th element for nth column
-    function <span class="fstat-no" title="function not covered" >getNthColumn(</span>n) {
-<span class="cstat-no" title="statement not covered" >        return getTableHeader().querySelectorAll('th')[n];</span>
+    functio<span class="fstat-no" title="function not covered" >n getNthColum</span>n(n) {
+<span class="cstat-no" title="statement not covered" >        return getTableHeader().querySelectorAll('th')[</span>n];
     }
 &nbsp;
     // loads all columns
-    function <span class="fstat-no" title="function not covered" >loadColumns(</span>) {
-        var colNodes = <span class="cstat-no" title="statement not covered" >getTableHeader().querySelectorAll('th'),</span>
+    functio<span class="fstat-no" title="function not covered" >n loadColumn</span>s() {
+        var colNode<span class="cstat-no" title="statement not covered" >s = getTableHeader().querySelectorAll('t</span>h'),
             colNode,
-            cols = <span class="cstat-no" title="statement not covered" >[],</span>
+<span class="cstat-no" title="statement not covered" >            co</span>ls = [],
             col,
             i;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; colNodes.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >            colNode = colNodes[i];</span>
+<span class="cstat-no" title="statement not covered" >            colNode = colNode</span>s[i];
 <span class="cstat-no" title="statement not covered" >            col = {</span>
                 key: colNode.getAttribute('data-col'),
                 sortable: !colNode.getAttribute('data-nosort'),
                 type: colNode.getAttribute('data-type') || 'string'
             };
-<span class="cstat-no" title="statement not covered" >            cols.push(col);</span>
+<span class="cstat-no" title="statement not covered" >            cols.push(</span>col);
 <span class="cstat-no" title="statement not covered" >            if (col.sortable) {</span>
-<span class="cstat-no" title="statement not covered" >                col.defaultDescSort = col.type === 'number';</span>
+<span class="cstat-no" title="statement not covered" >                col.defaultDescSort = col.type === 'n</span>umber';
 <span class="cstat-no" title="statement not covered" >                colNode.innerHTML =</span>
                     colNode.innerHTML + '&lt;span class="sorter"&gt;&lt;/span&gt;';
             }
         }
-<span class="cstat-no" title="statement not covered" >        return cols;</span>
+<span class="cstat-no" title="statement not covered" >        return co</span>ls;
     }
     // attaches a data attribute to every tr element with an object
     // of data values keyed by column name
-    function <span class="fstat-no" title="function not covered" >loadRowData(</span>tableRow) {
-        var tableCols = <span class="cstat-no" title="statement not covered" >tableRow.querySelectorAll('td'),</span>
+    functio<span class="fstat-no" title="function not covered" >n loadRowDat</span>a(tableRow) {
+        var tableCol<span class="cstat-no" title="statement not covered" >s = tableRow.querySelectorAll('t</span>d'),
             colNode,
             col,
-            data = <span class="cstat-no" title="statement not covered" >{},</span>
+<span class="cstat-no" title="statement not covered" >            da</span>ta = {},
             i,
             val;
 <span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; tableCols.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >            colNode = tableCols[i];</span>
-<span class="cstat-no" title="statement not covered" >            col = cols[i];</span>
-<span class="cstat-no" title="statement not covered" >            val = colNode.getAttribute('data-value');</span>
+<span class="cstat-no" title="statement not covered" >            colNode = tableCol</span>s[i];
+<span class="cstat-no" title="statement not covered" >            col = col</span>s[i];
+<span class="cstat-no" title="statement not covered" >            val = colNode.getAttribute('data-val</span>ue');
 <span class="cstat-no" title="statement not covered" >            if (col.type === 'number') {</span>
-<span class="cstat-no" title="statement not covered" >                val = Number(val);</span>
+<span class="cstat-no" title="statement not covered" >                val = Numbe</span>r(val);
             }
-<span class="cstat-no" title="statement not covered" >            data[col.key] = val;</span>
+<span class="cstat-no" title="statement not covered" >            data[col.key] =</span> val;
         }
-<span class="cstat-no" title="statement not covered" >        return data;</span>
+<span class="cstat-no" title="statement not covered" >        return da</span>ta;
     }
     // loads all row data
-    function <span class="fstat-no" title="function not covered" >loadData(</span>) {
-        var rows = <span class="cstat-no" title="statement not covered" >getTableBody().querySelectorAll('tr'),</span>
+    functio<span class="fstat-no" title="function not covered" >n loadDat</span>a() {
+        var row<span class="cstat-no" title="statement not covered" >s = getTableBody().querySelectorAll('t</span>r'),
             i;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; rows.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >            rows[i].data = loadRowData(rows[i]);</span>
+<span class="cstat-no" title="statement not covered" >            rows[i].data = loadRowData(rows</span>[i]);
         }
     }
     // sorts the table using the data for the ith column
-    function <span class="fstat-no" title="function not covered" >sortByIndex(</span>index, desc) {
-        var key = <span class="cstat-no" title="statement not covered" >cols[index].key,</span>
-            sorter = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >fu</span>nction(a, b) {</span>
-<span class="cstat-no" title="statement not covered" >                a = a.data[key];</span>
-<span class="cstat-no" title="statement not covered" >                b = b.data[key];</span>
-<span class="cstat-no" title="statement not covered" >                return a &lt; b ? -1 : a &gt; b ? 1 : 0;</span>
+    functio<span class="fstat-no" title="function not covered" >n sortByInde</span>x(index, desc) {
+        var ke<span class="cstat-no" title="statement not covered" >y = cols[index].</span>key,
+            s<span class="cstat-no" title="statement not covered" >orter = f<span class="fstat-no" title="function not covered" >unction</span>(a, b) {</span>
+<span class="cstat-no" title="statement not covered" >                a = a.d</span>ata[key];
+<span class="cstat-no" title="statement not covered" >                b = b.d</span>ata[key];
+<span class="cstat-no" title="statement not covered" >                return a &lt; b ? -1 : a &gt; b</span> ? 1 : 0;
             },
-            finalSorter = <span class="cstat-no" title="statement not covered" >sorter,</span>
-            tableBody = <span class="cstat-no" title="statement not covered" >document.querySelector('.coverage-summary tbody'),</span>
-            rowNodes = <span class="cstat-no" title="statement not covered" >tableBody.querySelectorAll('tr'),</span>
-            rows = <span class="cstat-no" title="statement not covered" >[],</span>
+            finalS<span class="cstat-no" title="statement not covered" >orter =</span> sorter,
+            tabl<span class="cstat-no" title="statement not covered" >eBody = document.querySelector('.coverage-summary </span>tbody'),
+            row<span class="cstat-no" title="statement not covered" >Nodes = tableBody.querySelectorAl</span>l('tr'),
+<span class="cstat-no" title="statement not covered" >            ro</span>ws = [],
             i;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (desc) {</span>
-<span class="cstat-no" title="statement not covered" >            finalSorter = <span class="fstat-no" title="function not covered" >fu</span>nction(a, b) {</span>
-<span class="cstat-no" title="statement not covered" >                return -1 * sorter(a, b);</span>
+<span class="cstat-no" title="statement not covered" >            finalSorter = fun<span class="fstat-no" title="function not covered" >ction(a, b) </span>{</span>
+<span class="cstat-no" title="statement not covered" >                return -1 * sorter</span>(a, b);
             };
         }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; rowNodes.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >            rows.push(rowNodes[i]);</span>
-<span class="cstat-no" title="statement not covered" >            tableBody.removeChild(rowNodes[i]);</span>
+<span class="cstat-no" title="statement not covered" >            rows.push(rowNodes</span>[i]);
+<span class="cstat-no" title="statement not covered" >            tableBody.removeChild(rowNodes</span>[i]);
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        rows.sort(finalSorter);</span>
+<span class="cstat-no" title="statement not covered" >        rows.sort(finalSorte</span>r);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; rows.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >            tableBody.appendChild(rows[i]);</span>
+<span class="cstat-no" title="statement not covered" >            tableBody.appendChild(rows</span>[i]);
         }
     }
     // removes sort indicators for current column being sorted
-    function <span class="fstat-no" title="function not covered" >removeSortIndicators(</span>) {
-        var col = <span class="cstat-no" title="statement not covered" >getNthColumn(currentSort.index),</span>
-            cls = <span class="cstat-no" title="statement not covered" >col.className;</span>
+    functio<span class="fstat-no" title="function not covered" >n removeSortIndicator</span>s() {
+        var co<span class="cstat-no" title="statement not covered" >l = getNthColumn(currentSort.ind</span>ex),
+<span class="cstat-no" title="statement not covered" >            cls = col.cl</span>assName;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        cls = cls.replace(/ sorted$/, '').replace(/ sorted-desc$/, '');</span>
-<span class="cstat-no" title="statement not covered" >        col.className = cls;</span>
+<span class="cstat-no" title="statement not covered" >        cls = cls.replace(/ sorted$/, '').replace(/ sorted-desc$/, '</span>');
+<span class="cstat-no" title="statement not covered" >        col.className = c</span>ls;
     }
     // adds sort indicators for current column being sorted
-    function <span class="fstat-no" title="function not covered" >addSortIndicators(</span>) {
+    functio<span class="fstat-no" title="function not covered" >n addSortIndicator</span>s() {
 <span class="cstat-no" title="statement not covered" >        getNthColumn(currentSort.index).className += currentSort.desc</span>
             ? ' sorted-desc'
             : ' sorted';
     }
     // adds event listeners for all sorter widgets
-    function <span class="fstat-no" title="function not covered" >enableUI(</span>) {
+    functio<span class="fstat-no" title="function not covered" >n enableU</span>I() {
         var i,
             el,
-            ithSorter = <span class="cstat-no" title="statement not covered" >function <span class="fstat-no" title="function not covered" >ithSorter(</span>i) {</span>
-                var col = <span class="cstat-no" title="statement not covered" >cols[i];</span>
+            ithS<span class="cstat-no" title="statement not covered" >orter = f<span class="fstat-no" title="function not covered" >unction it</span>hSorter(i) {</span>
+<span class="cstat-no" title="statement not covered" >                var col </span>= cols[i];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                return <span class="fstat-no" title="function not covered" >fu</span>nction() {</span>
-                    var desc = <span class="cstat-no" title="statement not covered" >col.defaultDescSort;</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>                return function() {</span>
+<span class="cstat-no" title="statement not covered" >                    var desc = col.defa</span>ultDescSort;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >                    if (currentSort.index === i) {</span>
-<span class="cstat-no" title="statement not covered" >                        desc = !currentSort.desc;</span>
+<span class="cstat-no" title="statement not covered" >                        desc = !curr</span>entSort.desc;
                     }
-<span class="cstat-no" title="statement not covered" >                    sortByIndex(i, desc);</span>
-<span class="cstat-no" title="statement not covered" >                    removeSortIndicators();</span>
-<span class="cstat-no" title="statement not covered" >                    currentSort.index = i;</span>
-<span class="cstat-no" title="statement not covered" >                    currentSort.desc = desc;</span>
-<span class="cstat-no" title="statement not covered" >                    addSortIndicators();</span>
+<span class="cstat-no" title="statement not covered" >                    sortByInde</span>x(i, desc);
+<span class="cstat-no" title="statement not covered" >                    removeSortIn</span>dicators();
+<span class="cstat-no" title="statement not covered" >                    currentSort</span>.index = i;
+<span class="cstat-no" title="statement not covered" >                    currentSort.d</span>esc = desc;
+<span class="cstat-no" title="statement not covered" >                    addSortIn</span>dicators();
                 };
             };
 <span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; cols.length; i += 1) {</span>
 <span class="cstat-no" title="statement not covered" >            if (cols[i].sortable) {</span>
                 // add the click event handler on the th so users
                 // dont have to click on those tiny arrows
-<span class="cstat-no" title="statement not covered" >                el = getNthColumn(i).querySelector('.sorter').parentElement;</span>
+<span class="cstat-no" title="statement not covered" >                el = getNthColumn(i).querySelector('.sorter').parentE</span>lement;
 <span class="cstat-no" title="statement not covered" >                if (el.addEventListener) {</span>
-<span class="cstat-no" title="statement not covered" >                    el.addEventListener('click', ithSorter(i));</span>
+<span class="cstat-no" title="statement not covered" >                    el.addEventListener('click', ithSo</span>rter(i));
                 } else {
-<span class="cstat-no" title="statement not covered" >                    el.attachEvent('onclick', ithSorter(i));</span>
+<span class="cstat-no" title="statement not covered" >                    el.attachEvent('onclick', ithSo</span>rter(i));
                 }
             }
         }
     }
     // adds sorting functionality to the UI
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >fu</span>nction() {</span>
+<span class="cstat-no" title="statement not covered" >    retur<span class="fstat-no" title="function not covered" >n </span>function() {</span>
 <span class="cstat-no" title="statement not covered" >        if (!getTable()) {</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
+<span class="cstat-no" title="statement not covered" >            re</span>turn;
         }
-<span class="cstat-no" title="statement not covered" >        cols = loadColumns();</span>
-<span class="cstat-no" title="statement not covered" >        loadData();</span>
-<span class="cstat-no" title="statement not covered" >        addSortIndicators();</span>
-<span class="cstat-no" title="statement not covered" >        enableUI();</span>
+<span class="cstat-no" title="statement not covered" >        cols = loadColumns</span>();
+<span class="cstat-no" title="statement not covered" >        loadData</span>();
+<span class="cstat-no" title="statement not covered" >        addSortIndicators</span>();
+<span class="cstat-no" title="statement not covered" >        enableUI</span>();
     };
 })();
 &nbsp;
@@ -574,7 +574,7 @@ var addSorting = <span class="cstat-no" title="statement not covered" >(<span cl
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 22 2020 05:31:36 GMT-0400 (Eastern Daylight Time)
+                at Sun Oct 25 2020 10:32:51 GMT-0700 (Pacific Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

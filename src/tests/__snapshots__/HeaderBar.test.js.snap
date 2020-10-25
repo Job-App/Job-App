@@ -1,46 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testing HeaderBar component 1`] = `
-<View
-  style={89}
->
-  <View
-    style={
-      Array [
-        90,
-        91,
-      ]
-    }
-  >
-    <TouchableOpacity
-      activeOpacity={0.8}
-      style={93}
-    >
-      <Text
-        style={94}
-      >
-        Add
-      </Text>
-    </TouchableOpacity>
-  </View>
-  <View
-    style={
-      Array [
-        90,
-        92,
-      ]
-    }
-  >
-    <TouchableOpacity
-      activeOpacity={0.8}
-      style={93}
-    >
-      <Text
-        style={94}
-      >
-        Login
-      </Text>
-    </TouchableOpacity>
-  </View>
-</View>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

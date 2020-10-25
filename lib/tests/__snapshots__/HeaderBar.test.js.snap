@@ -2,45 +2,88 @@
 
 exports[`Testing HeaderBar component 1`] = `
 <View
-  style={89}
+  style={
+    Object {
+      "backgroundColor": "#3D348B",
+      "flexDirection": "row",
+      "height": 111.16666666666667,
+      "width": 750,
+    }
+  }
 >
   <View
     style={
       Array [
-        90,
-        91,
+        Object {
+          "flex": 1,
+          "marginBottom": 10,
+          "marginTop": "auto",
+        },
+        Object {
+          "alignItems": "flex-start",
+        },
       ]
     }
   >
-    <TouchableOpacity
+    <ForwardRef
       activeOpacity={0.8}
-      style={93}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginLeft": 24,
+          "marginRight": 24,
+        }
+      }
     >
       <Text
-        style={94}
+        style={
+          Object {
+            "color": "#E0E2DB",
+            "fontSize": 24,
+          }
+        }
       >
         Add
       </Text>
-    </TouchableOpacity>
+    </ForwardRef>
   </View>
   <View
     style={
       Array [
-        90,
-        92,
+        Object {
+          "flex": 1,
+          "marginBottom": 10,
+          "marginTop": "auto",
+        },
+        Object {
+          "alignItems": "flex-end",
+        },
       ]
     }
   >
-    <TouchableOpacity
+    <ForwardRef
       activeOpacity={0.8}
-      style={93}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginLeft": 24,
+          "marginRight": 24,
+        }
+      }
     >
       <Text
-        style={94}
+        style={
+          Object {
+            "color": "#E0E2DB",
+            "fontSize": 24,
+          }
+        }
       >
         Login
       </Text>
-    </TouchableOpacity>
+    </ForwardRef>
   </View>
 </View>
 `;
