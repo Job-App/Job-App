@@ -8,6 +8,7 @@ import Homepage from './src/navigation/Homepage/Homepage'
 import AddJob from './src/navigation/AddJob/AddJob'
 import Login from './src/navigation/Login/Login'
 import JobDetails from './src/navigation/JobDetails/JobDetails'
+import UpdateJob from './src/navigation/UpdateJob/UpdateJob'
 
 const Stack = createStackNavigator()
 
@@ -23,6 +24,11 @@ function App() {
                 <Stack.Screen
                     name="JobDetails"
                     component={JobDetails}
+                    options={({ route }) => ({ id: route.params.id })}
+                />
+                <Stack.Screen
+                    name="UpdateJob"
+                    component={UpdateJob}
                     options={({ route }) => ({ id: route.params.id })}
                 />
             </Stack.Navigator>

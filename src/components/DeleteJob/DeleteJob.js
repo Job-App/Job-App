@@ -31,7 +31,7 @@ const DeleteJob = (props) => {
               [
                 {
                   text: "Ok",
-                  onPress: () => navigation.navigate("HomeScreen"),
+                  onPress: () => navigation.navigate("Homepage"),
                 },
               ],
               {
@@ -39,7 +39,19 @@ const DeleteJob = (props) => {
               }
             );
           } else {
-            Alert.alert("Error", "Please insert a valid Job Id");
+              Alert.alert(
+            "Error: Job ID not found",
+            "Job may have already been deleted.",
+            [
+              {
+                text: "Ok",
+                onPress: () => navigation.navigate("Homepage"),
+              },
+            ],
+            {
+              cancelable: false,
+            }
+          );
           }
         }
       );
@@ -47,7 +59,7 @@ const DeleteJob = (props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View>
       <TouchableOpacity
         activeOpacity={0.8}
         style={styles.button}
@@ -60,11 +72,6 @@ const DeleteJob = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   button: {
     width: width - 96,
     backgroundColor: "#0394fc",
