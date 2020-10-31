@@ -68,7 +68,7 @@ const JobForm = () => {
                                 {
                                     text: 'Ok',
                                     onPress: () =>
-                                        navigation.navigate('HomeScreen'),
+                                        navigation.navigate('Homepage'),
                                 },
                             ],
                             { cancelable: false }

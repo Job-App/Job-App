@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing HeaderBar component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#3D348B",
+      "flexDirection": "row",
+      "height": 111.16666666666667,
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "marginBottom": 10,
+          "marginTop": "auto",
+        },
+        Object {
+          "alignItems": "flex-start",
+        },
+      ]
+    }
+  >
+    <ForwardRef
+      activeOpacity={0.8}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginLeft": 24,
+          "marginRight": 24,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#E0E2DB",
+            "fontSize": 24,
+          }
+        }
+      >
+        Add
+      </Text>
+    </ForwardRef>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "marginBottom": 10,
+          "marginTop": "auto",
+        },
+        Object {
+          "alignItems": "flex-end",
+        },
+      ]
+    }
+  >
+    <ForwardRef
+      activeOpacity={0.8}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginLeft": 24,
+          "marginRight": 24,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#E0E2DB",
+            "fontSize": 24,
+          }
+        }
+      >
+        Login
+      </Text>
+    </ForwardRef>
+  </View>
+</View>
+`;
