@@ -4,12 +4,6 @@ module.exports = {
     "node_modules",
     "src"
   ],
-  "collectCoverageFrom": [
-    'src/**/*.{js,jsx}',
-    "**/*.{js,jsx}",
-    "!**/node_modules/**",
-    "!**/vendor/**"
-  ],
   "transform": {
     "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
   },
@@ -26,7 +20,8 @@ module.exports = {
   },
   "transformIgnorePatterns": [],
   "testPathIgnorePatterns": [
-    "<rootDir>/SQLite"
+    "./SQLite",
+    "./coverage"
   ],
   "collectCoverage": true,
   "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],

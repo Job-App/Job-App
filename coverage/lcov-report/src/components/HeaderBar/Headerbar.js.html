@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>16/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>8/12</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -130,31 +130,23 @@
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,6 +168,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,6 +196,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
 import {
     View,
@@ -212,12 +212,12 @@ import {
     Dimensions,
 } from 'react-native'
 import { withNavigation } from 'react-navigation'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'<span class="branch-0 cbranch-no" title="branch not covered" ></span>
 &nbsp;
-const { width, height } = <span class="cstat-no" title="statement not covered" >Dimensions.get('screen')</span>
+const { width, height } = Dimensions.get('screen')
 &nbsp;
-const HeaderBar = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {</span>
-    const navigation = <span class="cstat-no" title="statement not covered" >useNavigation()</span>
+const HeaderBar = (props)<span class="fstat-no" title="function not covered" > =&gt; {</span>
+    const navigatio<span class="cstat-no" title="statement not covered" >n = useNavigation()</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
         &lt;View style={styles.container}&gt;
@@ -225,7 +225,7 @@ const HeaderBar = <span class="cstat-no" title="statement not covered" ><span cl
                 &lt;TouchableOpacity
                     activeOpacity={0.8}
                     style={styles.button}
-                    onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate(props.leftNav)}</span>&gt;
+                    onPr<span class="fstat-no" title="function not covered" >ess={() </span>=&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate(props.leftNav)}&gt;</span>
                     &lt;Text style={styles.plus}&gt;{props.left}&lt;/Text&gt;
                 &lt;/TouchableOpacity&gt;
             &lt;/View&gt;
@@ -233,7 +233,7 @@ const HeaderBar = <span class="cstat-no" title="statement not covered" ><span cl
                 &lt;TouchableOpacity
                     activeOpacity={0.8}
                     style={styles.button}
-                    onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate(props.rightNav)}</span>&gt;
+                    onPr<span class="fstat-no" title="function not covered" >ess={() </span>=&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate(props.rightNav)}&gt;</span>
                     &lt;Text style={styles.plus}&gt;{props.right}&lt;/Text&gt;
                 &lt;/TouchableOpacity&gt;
             &lt;/View&gt;
@@ -241,7 +241,7 @@ const HeaderBar = <span class="cstat-no" title="statement not covered" ><span cl
     )
 }
 &nbsp;
-const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
+const styles = StyleSheet.create({
     container: {
         width: width,
         height: height / 12,
@@ -283,7 +283,7 @@ export default withNavigation(HeaderBar)
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Oct 25 2020 09:08:37 GMT-0700 (Pacific Daylight Time)
+                at Sun Oct 25 2020 12:35:00 GMT-0700 (Pacific Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
