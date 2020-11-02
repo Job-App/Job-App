@@ -18,7 +18,9 @@ const AddJob = ({ navigation }) => {
                 rightNav=""
             />
             <Text style={styles.text}>Add Job</Text>
-            <View style={styles.formContainer}>
+            <View 
+                testID="job-form"
+                style={styles.formContainer}>
                 <JobForm />
             </View>
         </>

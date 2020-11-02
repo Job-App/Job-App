@@ -17,7 +17,7 @@ const Homepage = () => {
     const Stack = createStackNavigator()
 
     return (
-        <>
+        <View testID="homepage">
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
                 <ScrollView
@@ -42,7 +42,7 @@ const Homepage = () => {
                     <View style={{ margin: 12 }} />
                 </ScrollView>
             </SafeAreaView>
-        </>
+        </ View>
     )
 }
 

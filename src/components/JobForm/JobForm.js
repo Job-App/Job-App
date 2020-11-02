@@ -68,7 +68,7 @@ const JobForm = () => {
                                 {
                                     text: 'Ok',
                                     onPress: () =>
-                                        navigation.navigate('Homepage'),
+                                        navigation.push('Homepage'),
                                 },
                             ],
                             { cancelable: false }
@@ -96,6 +96,7 @@ const JobForm = () => {
             {({ handleChange, handleBlur, handleSubmit, values }) => ( */}
             <View>
                 <TextInput
+                    testID="add-company"
                     styles={styles.input}
                     placeholder="company"
                     // onBlur={handleBlur('company')}
@@ -104,6 +105,7 @@ const JobForm = () => {
                     clearButtonMode="always"
                 />
                 <TextInput
+                    testID="add-title"
                     styles={styles.input}
                     placeholder="title"
                     // onBlur={handleBlur('title')}
@@ -112,6 +114,7 @@ const JobForm = () => {
                     clearButtonMode="always"
                 />
                 <TextInput
+                    testID="add-deadline"
                     styles={styles.input}
                     placeholder="deadline"
                     // onBlur={handleBlur('deadline')}
@@ -120,6 +123,7 @@ const JobForm = () => {
                     clearButtonMode="always"
                 />
                 <TextInput
+                    testID="add-applied"
                     styles={styles.input}
                     placeholder="applied"
                     // onBlur={handleBlur('applied')}
@@ -128,6 +132,7 @@ const JobForm = () => {
                     clearButtonMode="always"
                 />
                 <TextInput
+                    testID="add-link"
                     styles={styles.input}
                     placeholder="link"
                     // onBlur={handleBlur('link')}
@@ -135,7 +140,10 @@ const JobForm = () => {
                     onChangeText={(linkI) => setLink(linkI)}
                     clearButtonMode="always"
                 />
-                <Button onPress={jobForm} title="Submit" />
+                <Button
+                    testID="add-submit"
+                    onPress={jobForm}
+                    title="Submit" />
             </View>
             {/* )} */}
             {/* </Formik> */}

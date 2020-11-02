@@ -48,11 +48,32 @@
     "babel-plugin-syntax-class-properties": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react-native": "^5.0.2",
+    "detox": "^17.10.6",
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^6.5.1",
     "jest": "^25.5.4",
+    "jest-circus": "^26.6.1",
     "metro-react-native-babel-preset": "^0.59.0",
     "node-sass": "^4.14.1",
     "react-test-renderer": "16.13.1"
+  },
+  "detox": {
+    "configurations": {
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Pixel_2_API_29"
+        }
+      },
+      "android.emu.release": {
+        "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+        "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..",
+        "type": "android.emulator",
+        "name": "Pixel_2_API_29"
+      }
+    },
+    "test-runner": "jest"
   }
 }
