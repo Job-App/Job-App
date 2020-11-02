@@ -15,6 +15,7 @@ const Cards = (props) => {
 
     return (
         <TouchableOpacity
+            testID={props.company}
             activeOpacity={0.8}
             onPress={() =>
                 navigation.navigate('JobDetails', {

@@ -18,6 +18,7 @@ const HeaderBar = (props) => {
         <View style={styles.container}>
             <View style={[styles.buttonContainer, styles.buttonContainerLeft]}>
                 <TouchableOpacity
+                    testID="headerbar-left-button"
                     activeOpacity={0.8}
                     style={styles.button}
                     onPress={() => navigation.navigate(props.leftNav)}>
@@ -26,6 +27,7 @@ const HeaderBar = (props) => {
             </View>
             <View style={[styles.buttonContainer, styles.buttonContainerRight]}>
                 <TouchableOpacity
+                    testID="headerbar-right-button"
                     activeOpacity={0.8}
                     style={styles.button}
                     onPress={() => navigation.navigate(props.rightNav)}>
