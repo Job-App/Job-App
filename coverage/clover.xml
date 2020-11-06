@@ -1,57 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603654500127" clover="3.2.0">
-  <project timestamp="1603654500127" name="All files">
-    <metrics statements="28" coveredstatements="22" conditionals="18" coveredconditionals="9" methods="10" coveredmethods="6" elements="56" coveredelements="37" complexity="0" loc="28" ncloc="28" packages="4" files="4" classes="4"/>
+<coverage generated="1604682462849" clover="3.2.0">
+  <project timestamp="1604682462850" name="All files">
+    <metrics statements="49" coveredstatements="28" conditionals="94" coveredconditionals="28" methods="23" coveredmethods="8" elements="166" coveredelements="64" complexity="0" loc="49" ncloc="49" packages="4" files="4" classes="4"/>
     <package name="lib.components.HeaderBar">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="Headerbar.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App Test\Job-App\lib\components\HeaderBar\Headerbar.js">
+      <file name="Headerbar.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App\lib\components\HeaderBar\Headerbar.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Cards">
       <metrics statements="10" coveredstatements="8" conditionals="10" coveredconditionals="3" methods="3" coveredmethods="2"/>
-      <file name="Cards.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App Test\Job-App\src\components\Cards\Cards.js">
+      <file name="Cards.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App\src\components\Cards\Cards.js">
         <metrics statements="10" coveredstatements="8" conditionals="10" coveredconditionals="3" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="9" count="1" type="cond" truecount="3" falsecount="1"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.HeaderBar">
       <metrics statements="12" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="1"/>
-      <file name="Headerbar.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App Test\Job-App\src\components\HeaderBar\Headerbar.js">
+      <file name="Headerbar.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App\src\components\HeaderBar\Headerbar.js">
         <metrics statements="12" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.navigation.Login">
-      <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
-      <file name="Login.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App Test\Job-App\src\navigation\Login\Login.js">
-        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="26" coveredstatements="11" conditionals="80" coveredconditionals="22" methods="15" coveredmethods="4"/>
+      <file name="Login.js" path="C:\Users\erich\Desktop\School\CSDS393\Job-App\src\navigation\Login\Login.js">
+        <metrics statements="26" coveredstatements="11" conditionals="80" coveredconditionals="22" methods="15" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="6" count="28" type="cond" truecount="22" falsecount="50"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
       </file>
     </package>
   </project>

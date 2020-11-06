@@ -10,6 +10,8 @@ target 'JobApp' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+  pod 'Jet', :path => '../node_modules/jet'
+
   target 'JobAppTests' do
     inherit! :complete
     # Pods for testing
