@@ -1,6 +1,7 @@
 describe('Add Job Test', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
+    device
   });
 
   it('Submit a Job App', async () => {
