@@ -54,6 +54,10 @@ const JobDetails = ({ route }) => {
       <Text style={[styles.subtitle]}>Title: {details.title || "N/A"}</Text>
       <Text style={[styles.text]}>Applied: {details.applied || "N/A"}</Text>
       <Text style={[styles.text]}>Deadline: {details.deadline || "N/A"}</Text>
+      <Text style={[styles.text]}>link: {details.link || "N/A"}</Text>
+      <Text style={[styles.text]}>File link: {details.flink || "N/A"}</Text>
+
+
 
       <View style={styles.container}>
         <TouchableOpacity
