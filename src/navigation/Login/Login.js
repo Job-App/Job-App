@@ -45,7 +45,7 @@ const Login = () => {
             "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRbMUGNDVN_JkCPn75qh5u1GKYDXcOFnt2xYw&usqp=CAU",
         }}
       />
-      <View style={styles.body}>
+      <View style={styles.body} testID="login_page">
         <View style={styles.bodyContent}>
           <Text style={styles.name}>{details.name || "N/A"}</Text>
           <Text style={styles.info}>{details.title || "N/A"}</Text>
