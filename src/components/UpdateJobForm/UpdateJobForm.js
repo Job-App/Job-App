@@ -71,8 +71,9 @@ const UpdateJobForm = (props) => {
 
   return (
     <>
-      <View>
+      <View testID="update_job">
         <TextInput
+          testID="update-company"
           styles={styles.input}
           placeholder="company"
           // onBlur={handleBlur('company')}
@@ -82,6 +83,7 @@ const UpdateJobForm = (props) => {
           clearButtonMode="always"
         />
         <TextInput
+          testID="update-title"
           styles={styles.input}
           placeholder="title"
           // onBlur={handleBlur('title')}
@@ -92,6 +94,7 @@ const UpdateJobForm = (props) => {
         />
         <TextInput
           styles={styles.input}
+          testID="update-deadline"
           placeholder="deadline"
           // onBlur={handleBlur('deadline')}
           // value={values.deadline}
@@ -101,6 +104,7 @@ const UpdateJobForm = (props) => {
         />
         <TextInput
           styles={styles.input}
+          testID="update-applied"
           placeholder="applied"
           // onBlur={handleBlur('applied')}
           // value={values.applied}
@@ -109,6 +113,7 @@ const UpdateJobForm = (props) => {
           clearButtonMode="always"
         />
         <TextInput
+          testID="update-link"
           styles={styles.input}
           placeholder="link"
           // onBlur={handleBlur('link')}

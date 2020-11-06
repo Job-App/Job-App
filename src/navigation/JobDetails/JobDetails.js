@@ -41,7 +41,7 @@ const JobDetails = ({ route }) => {
   }, []);
   console.log(details);
   return (
-    <View>
+    <View testID="details">
       <HeaderBar
         navigation={Stack}
         left="Back"
