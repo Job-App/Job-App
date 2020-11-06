@@ -42,18 +42,32 @@ const JobForm = () => {
     let [deadline, setDeadline] = useState('')
     let [applied, setApplied] = useState('')
     let [link, setLink] = useState('')
+    let [filelink, setFLink] = useState('')
+
 
     let jobForm = () => {
+
+        if (!company) {
+            alert('Please fill in company name');
+            return;
+        }
+        if (!title) {
+            alert('Please fill in job title');
+            return;
+        }
+            
         db.transaction((tx) => {
             tx.executeSql(
                 //"create table if not exists DataTable (id integer primary key not null, column_1 int, column_2 int, column_3 text);",
-                'CREATE TABLE IF NOT EXISTS table_applications(job_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(225), company VARCHAR(225), deadline VARCHAR(40), applied VARCHAR(40), link VARCHAR(225));',
+                'CREATE TABLE IF NOT EXISTS table_applications(job_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(225), company VARCHAR(225), deadline VARCHAR(40), applied VARCHAR(40), link VARCHAR(225), flink VARCHAR(225));',
                 []
             )
+            
+    
 
             tx.executeSql(
-                'INSERT INTO table_applications (title, company, deadline, applied, link) VALUES (?,?,?,?,?)',
-                [title, company, deadline, applied, link],
+                'INSERT INTO table_applications (title, company, deadline, applied, link,flink) VALUES (?,?,?,?,?,?)',
+                [title, company, deadline, applied, link, filelink],
                 (txR, results) => {
                     if (results.rowsAffected > 0) {
                         //CHECK: alert isn't working insert console.log here
@@ -72,7 +86,7 @@ const JobForm = () => {
                                 },
                             ],
                             { cancelable: false }
-                        )
+                        );
 
                         setCompany('')
                     } else Alert.alert('Error', 'Submission Failed')
@@ -138,6 +152,15 @@ const JobForm = () => {
                     // onBlur={handleBlur('link')}
                     // value={values.link}
                     onChangeText={(linkI) => setLink(linkI)}
+                    clearButtonMode="always"
+                />
+                <TextInput
+                    testID="add-file"
+                    styles={styles.input}
+                    placeholder="file url"
+                    // onBlur={handleBlur('link')}
+                    // value={values.link}
+                    onChangeText={(flinkI) => setFLink(flinkI)}
                     clearButtonMode="always"
                 />
                 <Button
