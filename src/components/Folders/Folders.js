@@ -38,6 +38,7 @@ const Folders = (props) => {
                 company={item.company}
                 title={item.title}
                 closing={item.deadline}
+                testID = {'card' + item.job_id}
             />
         )
     }

@@ -55,6 +55,10 @@ const JobForm = () => {
             alert('Please fill in job title');
             return;
         }
+        if (!filelink.contains('google.com')) {
+            alert('Please upload a Google Docs or Google Drive link');
+            return;
+        }
             
         db.transaction((tx) => {
             tx.executeSql(
@@ -62,8 +66,6 @@ const JobForm = () => {
                 'CREATE TABLE IF NOT EXISTS table_applications(job_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(225), company VARCHAR(225), deadline VARCHAR(40), applied VARCHAR(40), link VARCHAR(225), flink VARCHAR(225));',
                 []
             )
-            
-    
 
             tx.executeSql(
                 'INSERT INTO table_applications (title, company, deadline, applied, link,flink) VALUES (?,?,?,?,?,?)',
