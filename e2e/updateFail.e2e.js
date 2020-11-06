@@ -1,4 +1,4 @@
-describe('Update Job Test', () => {
+describe('Update Job Fail', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
   });
@@ -18,7 +18,7 @@ describe('Update Job Test', () => {
       await waitFor(element(by.id('TestCompany'))).toBeVisible().withTimeout(2000);
     });
 
-  it('Update a Job App', async () => {
+  it('Update a Job Fail', async () => {
     await expect(element(by.id('homepage'))).toBeVisible();
     await element(by.text('TestCompany')).tap();
     await expect(element(by.id('details'))).toBeVisible();
