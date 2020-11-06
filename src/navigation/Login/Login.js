@@ -16,10 +16,6 @@ const Login = () => {
 
   useEffect(() => {
     db.transaction((tx) => {
-      // tx.executeSql(
-      //   "DROP TABLE IF EXISTS profile",
-      //   []
-      // );
       tx.executeSql(sqlQuery, [], (txR, results) => {
         var temp = [];
         for (let i = 0; i < results.rows.length; ++i)
