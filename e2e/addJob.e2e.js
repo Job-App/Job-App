@@ -4,6 +4,7 @@ describe('Add Job Test', () => {
   });
 
   it('Submit a Job App', async () => {
+    await waitFor(element(by.id('homepage'))).toBeVisible().withTimeout(2000);
     await expect(element(by.id('homepage'))).toBeVisible();
     await element(by.text('Add')).tap();
     await expect(element(by.id('job-form'))).toBeVisible();
@@ -19,6 +20,7 @@ describe('Add Job Test', () => {
   });
 
   it('Submit a Job App/No company', async () => {
+    await waitFor(element(by.id('homepage'))).toBeVisible().withTimeout(2000);
     await expect(element(by.id('homepage'))).toBeVisible();
     await element(by.text('Add')).tap();
     await expect(element(by.id('job-form'))).toBeVisible();
@@ -35,6 +37,7 @@ describe('Add Job Test', () => {
 
   
   it('Submit a Job App/No title', async () => {
+    await waitFor(element(by.id('homepage'))).toBeVisible().withTimeout(2000);
     await expect(element(by.id('homepage'))).toBeVisible();
     await element(by.text('Add')).tap();
     await expect(element(by.id('job-form'))).toBeVisible();
