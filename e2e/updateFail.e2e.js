@@ -24,7 +24,8 @@ describe('Update Job Fail', () => {
     await expect(element(by.id('details'))).toBeVisible();
     await element(by.text('Update Job')).tap();
     await expect(element(by.id('update_job'))).toBeVisible();
-    await element(by.id('Submit')).tap();
+    await waitFor(element(by.id('update-submit'))).toBeVisible().withTimeout(2000);
+    await element(by.id('update-submit')).tap();
     await waitFor(element(by.text('Please fill in job title'))).toBeVisible().withTimeout(2000);
   });
 

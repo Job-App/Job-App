@@ -26,7 +26,8 @@ describe('Update Job Test', () => {
     await expect(element(by.id('update_job'))).toBeVisible();
     await element(by.id('update-company')).typeText('UpdateCompany\n');
     await element(by.id('update-title')).typeText('UpdateTitle\n');
-    await element(by.id('Submit')).tap();
+    await waitFor(element(by.id('update-submit'))).toBeVisible().withTimeout(2000);
+    await element(by.id('update-submit')).tap();
     await waitFor(element(by.text('Success'))).toBeVisible().withTimeout(2000);
   });
 
