@@ -51,7 +51,7 @@ const Login = () => {
           <Text style={styles.info}>{details.title || "N/A"}</Text>
           <Text style={styles.description}>{details.description || "N/A"}</Text>
 
-          <TouchableOpacity
+          <TouchableOpacity testID="update_profile"
             style={styles.buttonContainer}
             onPress={() => navigation.navigate("UpdateProfile")}
           >

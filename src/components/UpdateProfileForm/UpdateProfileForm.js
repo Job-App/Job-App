@@ -70,12 +70,14 @@ const UpdateProfile = () => {
     <>
       <View>
         <TextInput
+        testID="update-pname"
           styles={styles.input}
           placeholder="Name"
           onChangeText={(nameI) => setName(nameI)}
           clearButtonMode="always"
         />
         <TextInput
+        testID="update-ptitle"
           styles={styles.input}
           placeholder="Title"
           onChangeText={(titleI) => setTitle(titleI)}
@@ -88,6 +90,7 @@ const UpdateProfile = () => {
           clearButtonMode="always"
         />
         <Button
+        testID="update-psubmit"
           style={styles.buttonContainer}
           onPress={setProfile}
           title="Submit"
