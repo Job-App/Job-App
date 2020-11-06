@@ -9,6 +9,7 @@ import AddJob from './src/navigation/AddJob/AddJob'
 import Login from './src/navigation/Login/Login'
 import JobDetails from './src/navigation/JobDetails/JobDetails'
 import UpdateJob from './src/navigation/UpdateJob/UpdateJob'
+import UpdateProfile from './src/navigation/UpdateProfile/UpdateProfile'
 
 const Stack = createStackNavigator()
 
@@ -21,6 +22,7 @@ function App() {
                 <Stack.Screen name="Homepage" component={Homepage} />
                 <Stack.Screen name="AddJob" component={AddJob} />
                 <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
                 <Stack.Screen
                     name="JobDetails"
                     component={JobDetails}
