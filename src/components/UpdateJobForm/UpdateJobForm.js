@@ -28,6 +28,11 @@ const UpdateJobForm = (props) => {
   let [link, setLink] = useState(props.link);
 
   let updateJob = () => {
+    if (!title) {
+                alert('Please fill in job title');
+                return;
+            }
+    console.log(title + "!")
     db.transaction((tx) => {
       tx.executeSql(
         `UPDATE table_applications
@@ -122,7 +127,7 @@ const UpdateJobForm = (props) => {
           onChangeText={(linkI) => setLink(linkI)}
           clearButtonMode="always"
         />
-        <Button onPress={updateJob} title="Submit" />
+        <Button testID="update-submit" onPress={updateJob} title="Submit" />
       </View>
     </>
   );
