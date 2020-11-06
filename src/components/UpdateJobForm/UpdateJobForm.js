@@ -16,7 +16,7 @@ import { openDatabase } from "react-native-sqlite-storage";
 
 const { width, height } = Dimensions.get("screen");
 
-const UpdateJob = (props) => {
+const UpdateJobForm = (props) => {
   const navigation = useNavigation();
 
   const db = openDatabase("table_applications.db");
@@ -130,4 +130,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default UpdateJob;
+export default UpdateJobForm;
