@@ -35,8 +35,10 @@ const styles = StyleSheet.create({
         marginBottom: 12,
     },
     formContainer: {
+        flex: 10,
         width: width - 48,
         alignSelf: 'center',
+        justifyContent: 'center',
     },
 })
 
