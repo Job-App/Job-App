@@ -21,7 +21,7 @@ const HeaderBar = (props) => {
                     testID="headerbar-left-button"
                     activeOpacity={0.8}
                     style={styles.button}
-                    onPress={() => navigation.navigate(props.leftNav)}>
+                    onPress={() => navigation.push(props.leftNav)}>
                     <Text style={styles.plus}>{props.left}</Text>
                 </TouchableOpacity>
             </View>
@@ -30,7 +30,7 @@ const HeaderBar = (props) => {
                     testID="headerbar-right-button"
                     activeOpacity={0.8}
                     style={styles.button}
-                    onPress={() => navigation.navigate(props.rightNav)}>
+                    onPress={() => navigation.push(props.rightNav)}>
                     <Text style={styles.plus}>{props.right}</Text>
                 </TouchableOpacity>
             </View>
