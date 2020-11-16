@@ -6,6 +6,8 @@ import {
   Button,
   TextInput,
   Alert,
+  ScrollView,
+  KeyboardAvoidingView
 } from "react-native";
 // import { withNavigation } from 'react-navigation';
 // import { NavigationContainer } from '@react-navigation/native';
@@ -76,8 +78,10 @@ const UpdateJobForm = (props) => {
   };
 
   return (
-    <>
-      <View testID="update_job">
+    <ScrollView keyboardShouldPersistTaps="handled">
+    <KeyboardAvoidingView>
+    <>          
+      <View>
         <TextInput
           testID="update-company"
           styles={styles.input}
@@ -88,6 +92,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(companyI) => setCompany(companyI)}
           clearButtonMode="always"
         />
+      </View>
+        <View>
         <TextInput
           testID="update-title"
           styles={styles.input}
@@ -98,6 +104,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(titleI) => setTitle(titleI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
         <TextInput
           styles={styles.input}
           testID="update-deadline"
@@ -108,6 +116,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(deadlineI) => setDeadline(deadlineI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
         <TextInput
           styles={styles.input}
           testID="update-applied"
@@ -118,6 +128,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(appliedI) => setApplied(appliedI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
         <TextInput
           testID="update-link"
           styles={styles.input}
@@ -128,6 +140,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(linkI) => setLink(linkI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
         <TextInput
           testID="update-file"
           styles={styles.input}
@@ -141,6 +155,8 @@ const UpdateJobForm = (props) => {
         <Button testID="update-submit" onPress={updateJob} title="Submit" />
       </View>
     </>
+    </KeyboardAvoidingView>   
+    </ScrollView>  
   );
 };
 
