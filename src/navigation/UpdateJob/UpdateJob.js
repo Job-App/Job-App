@@ -25,6 +25,8 @@ const UpdateJob = ({ navigation, route }) => {
           title={route.params.title}
           applied={route.params.applied}
           deadline={route.params.deadline}
+          link={route.params.link}
+          file={route.params.file}
         />
       </View>
     </>

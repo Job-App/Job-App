@@ -67,7 +67,7 @@ const JobForm = () => {
             )
 
             tx.executeSql(
-                'INSERT INTO table_applications (title, company, deadline, applied, link,flink) VALUES (?,?,?,?,?,?)',
+                'INSERT INTO table_applications (title, company, deadline, applied, link, flink) VALUES (?,?,?,?,?,?)',
                 [title, company, deadline, applied, link, filelink],
                 (txR, results) => {
                     if (results.rowsAffected > 0) {
