@@ -52,7 +52,7 @@ const UpdateJobForm = (props) => {
                 {
                   text: "Ok",
                   onPress: () =>
-                    navigation.navigate("JobDetails", {
+                    navigation.push("JobDetails", {
                       id: props.id,
                     }),
                 },

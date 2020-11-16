@@ -6,7 +6,7 @@ import HeaderBar from './../../components/HeaderBar/Headerbar'
 
 const { width, height } = Dimensions.get('screen')
 
-const AddJob = ({ navigation }) => {
+const AddJob = ({navigation}) => {
     const Stack = createStackNavigator()
     return (
         <>

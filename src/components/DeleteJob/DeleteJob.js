@@ -31,7 +31,7 @@ const DeleteJob = (props) => {
               [
                 {
                   text: "Ok",
-                  onPress: () => navigation.navigate("Homepage"),
+                  onPress: () => navigation.push("Homepage"),
                 },
               ],
               {
@@ -45,7 +45,7 @@ const DeleteJob = (props) => {
             [
               {
                 text: "Ok",
-                onPress: () => navigation.navigate("Homepage"),
+                onPress: () => navigation.push("Homepage"),
               },
             ],
             {
