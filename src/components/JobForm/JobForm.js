@@ -79,6 +79,8 @@ const JobForm = () => {
                             [
                                 {
                                     text: 'Add another',
+                                    onPress: () =>
+                                        navigation.push('AddJob'),
                                 },
                                 {
                                     text: 'Ok',
