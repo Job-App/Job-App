@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, Dimensions } from "react-native";
+import { Text, View, StyleSheet, Dimensions,ScrollView,KeyboardAvoidingView } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import UpdateJobForm from "./../../components/UpdateJobForm/UpdateJobForm";
 import HeaderBar from "./../../components/HeaderBar/Headerbar";
@@ -18,17 +18,21 @@ const UpdateJob = ({ navigation, route }) => {
         rightNav=""
       />
       <Text style={styles.text}>Update Job</Text>
-      <View style={styles.formContainer}>
-        <UpdateJobForm
-          id={route.params.id}
-          company={route.params.company}
-          title={route.params.title}
-          applied={route.params.applied}
-          deadline={route.params.deadline}
-          link={route.params.link}
-          file={route.params.file}
-        />
-      </View>
+      <ScrollView keyboardShouldPersistTaps="handled">
+      <KeyboardAvoidingView>
+          <View style={styles.formContainer}>
+            <UpdateJobForm
+              id={route.params.id}
+              company={route.params.company}
+              title={route.params.title}
+              applied={route.params.applied}
+              deadline={route.params.deadline}
+              link={route.params.link}
+              file={route.params.file}
+            />
+          </View>
+          </KeyboardAvoidingView>   
+          </ScrollView>
     </>
   );
 };
