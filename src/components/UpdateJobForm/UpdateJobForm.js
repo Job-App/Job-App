@@ -26,6 +26,7 @@ const UpdateJobForm = (props) => {
   let [deadline, setDeadline] = useState(props.deadline);
   let [applied, setApplied] = useState(props.applied);
   let [link, setLink] = useState(props.link);
+  let [file, setFile] = useState(props.file);
 
   let updateJob = () => {
     if (!title) {
@@ -36,11 +37,11 @@ const UpdateJobForm = (props) => {
     db.transaction((tx) => {
       tx.executeSql(
         `UPDATE table_applications
-        SET title=?, company=?, deadline=?, applied=?, link=?
+        SET title=?, company=?, deadline=?, applied=?, link=?, flink=?
         WHERE job_id="` +
           props.id +
           `"`,
-        [title, company, deadline, applied, link],
+        [title, company, deadline, applied, link, file],
         (txR, results) => {
           if (results.rowsAffected > 0) {
             //CHECK: alert isn't working insert console.log here
@@ -125,6 +126,16 @@ const UpdateJobForm = (props) => {
           // value={values.link}
           defaultValue={props.link}
           onChangeText={(linkI) => setLink(linkI)}
+          clearButtonMode="always"
+        />
+        <TextInput
+          testID="update-file"
+          styles={styles.input}
+          placeholder="file"
+          // onBlur={handleBlur('link')}
+          // value={values.link}
+          defaultValue={props.file}
+          onChangeText={(fileI) => setFile(fileI)}
           clearButtonMode="always"
         />
         <Button testID="update-submit" onPress={updateJob} title="Submit" />
