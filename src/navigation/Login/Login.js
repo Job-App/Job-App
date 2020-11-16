@@ -1,9 +1,11 @@
 import React, { Component, useEffect, useState } from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
 import HeaderBar from "./../../components/HeaderBar/Headerbar";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 import { openDatabase } from "react-native-sqlite-storage";
+
+const { width, height } = Dimensions.get('screen')
 
 const Login = () => {
   const Stack = createStackNavigator();
@@ -50,8 +52,10 @@ const Login = () => {
           <Text style={styles.name}>{details.name || "N/A"}</Text>
           <Text style={styles.info}>{details.title || "N/A"}</Text>
           <Text style={styles.description}>{details.description || "N/A"}</Text>
-
-          <TouchableOpacity testID="update_profile"
+        </View>
+        <View>
+          <TouchableOpacity
+            testID="update_profile"
             style={styles.buttonContainer}
             onPress={() => navigation.navigate("UpdateProfile")}
           >
@@ -78,11 +82,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     position: "absolute",
     marginTop: 130,
-  },
-  name: {
-    fontSize: 22,
-    color: "#FFFFFF",
-    fontWeight: "600",
   },
   body: {
     marginTop: 200,
@@ -114,10 +113,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    alignSelf: "center",
     marginBottom: 20,
-    width: 250,
+    width: width-108,
     borderRadius: 30,
     backgroundColor: "#00BFFF",
-  },
+  }
 });
 export default Login;
