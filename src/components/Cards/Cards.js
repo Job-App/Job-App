@@ -18,7 +18,7 @@ const Cards = (props) => {
             testID={props.company}
             activeOpacity={0.8}
             onPress={() =>
-                navigation.navigate('JobDetails', {
+                navigation.push('JobDetails', {
                     id: props.id,
                 })
             }>

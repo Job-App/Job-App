@@ -85,7 +85,6 @@ const JobDetails = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
