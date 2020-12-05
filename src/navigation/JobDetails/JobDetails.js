@@ -54,7 +54,7 @@ const JobDetails = ({ route }) => {
       <Text style={[styles.subtitle]}>Title: {details.title || "N/A"}</Text>
       <Text style={[styles.text]}>Applied: {details.applied || "N/A"}</Text>
       <Text style={[styles.text]}>Deadline: {details.deadline || "N/A"}</Text>
-      <Text style={[styles.text]}>link: {details.link || "N/A"}</Text>
+      <Text style={[styles.text]}>Link: {details.link || "N/A"}</Text>
       <Text style={[styles.text]}>File link: {details.flink || "N/A"}</Text>
 
 
@@ -70,6 +70,8 @@ const JobDetails = ({ route }) => {
               title: details.title,
               applied: details.applied,
               deadline: details.deadline,
+              link: details.link,
+              file: details.flink,
             })
           }
         >
@@ -83,7 +85,6 @@ const JobDetails = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },

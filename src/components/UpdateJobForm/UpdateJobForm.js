@@ -6,6 +6,8 @@ import {
   Button,
   TextInput,
   Alert,
+  ScrollView,
+  KeyboardAvoidingView
 } from "react-native";
 // import { withNavigation } from 'react-navigation';
 // import { NavigationContainer } from '@react-navigation/native';
@@ -26,6 +28,7 @@ const UpdateJobForm = (props) => {
   let [deadline, setDeadline] = useState(props.deadline);
   let [applied, setApplied] = useState(props.applied);
   let [link, setLink] = useState(props.link);
+  let [file, setFile] = useState(props.file);
 
   let updateJob = () => {
     if (!title) {
@@ -36,11 +39,11 @@ const UpdateJobForm = (props) => {
     db.transaction((tx) => {
       tx.executeSql(
         `UPDATE table_applications
-        SET title=?, company=?, deadline=?, applied=?, link=?
+        SET title=?, company=?, deadline=?, applied=?, link=?, flink=?
         WHERE job_id="` +
           props.id +
           `"`,
-        [title, company, deadline, applied, link],
+        [title, company, deadline, applied, link, file],
         (txR, results) => {
           if (results.rowsAffected > 0) {
             //CHECK: alert isn't working insert console.log here
@@ -52,7 +55,7 @@ const UpdateJobForm = (props) => {
                 {
                   text: "Ok",
                   onPress: () =>
-                    navigation.navigate("JobDetails", {
+                    navigation.push("JobDetails", {
                       id: props.id,
                     }),
                 },
@@ -75,8 +78,10 @@ const UpdateJobForm = (props) => {
   };
 
   return (
-    <>
-      <View testID="update_job">
+    <ScrollView keyboardShouldPersistTaps="handled">
+    <KeyboardAvoidingView>
+    <>          
+      <View>
         <TextInput
           testID="update-company"
           styles={styles.input}
@@ -87,6 +92,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(companyI) => setCompany(companyI)}
           clearButtonMode="always"
         />
+      </View>
+        <View>
         <TextInput
           testID="update-title"
           styles={styles.input}
@@ -97,6 +104,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(titleI) => setTitle(titleI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
         <TextInput
           styles={styles.input}
           testID="update-deadline"
@@ -107,6 +116,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(deadlineI) => setDeadline(deadlineI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
         <TextInput
           styles={styles.input}
           testID="update-applied"
@@ -117,6 +128,8 @@ const UpdateJobForm = (props) => {
           onChangeText={(appliedI) => setApplied(appliedI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
         <TextInput
           testID="update-link"
           styles={styles.input}
@@ -127,9 +140,23 @@ const UpdateJobForm = (props) => {
           onChangeText={(linkI) => setLink(linkI)}
           clearButtonMode="always"
         />
+        </View>
+        <View>
+        <TextInput
+          testID="update-file"
+          styles={styles.input}
+          placeholder="file"
+          // onBlur={handleBlur('link')}
+          // value={values.link}
+          defaultValue={props.file}
+          onChangeText={(fileI) => setFile(fileI)}
+          clearButtonMode="always"
+        />
         <Button testID="update-submit" onPress={updateJob} title="Submit" />
       </View>
     </>
+    </KeyboardAvoidingView>   
+    </ScrollView>  
   );
 };
 

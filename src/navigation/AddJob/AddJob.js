@@ -6,7 +6,7 @@ import HeaderBar from './../../components/HeaderBar/Headerbar'
 
 const { width, height } = Dimensions.get('screen')
 
-const AddJob = ({ navigation }) => {
+const AddJob = ({navigation}) => {
     const Stack = createStackNavigator()
     return (
         <>
@@ -35,8 +35,10 @@ const styles = StyleSheet.create({
         marginBottom: 12,
     },
     formContainer: {
+        flex: 10,
         width: width - 48,
         alignSelf: 'center',
+        justifyContent: 'center',
     },
 })
 

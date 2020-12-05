@@ -6,6 +6,9 @@ import {
     Button,
     TextInput,
     Alert,
+    ScrollView,
+    KeyboardAvoidingView,
+    SafeAreaView
 } from 'react-native'
 // import { withNavigation } from 'react-navigation';
 // import { NavigationContainer } from '@react-navigation/native';
@@ -55,10 +58,6 @@ const JobForm = () => {
             alert('Please fill in job title');
             return;
         }
-        if (!filelink.contains('google.com')) {
-            alert('Please upload a Google Docs or Google Drive link');
-            return;
-        }
             
         db.transaction((tx) => {
             tx.executeSql(
@@ -68,7 +67,7 @@ const JobForm = () => {
             )
 
             tx.executeSql(
-                'INSERT INTO table_applications (title, company, deadline, applied, link,flink) VALUES (?,?,?,?,?,?)',
+                'INSERT INTO table_applications (title, company, deadline, applied, link, flink) VALUES (?,?,?,?,?,?)',
                 [title, company, deadline, applied, link, filelink],
                 (txR, results) => {
                     if (results.rowsAffected > 0) {
@@ -80,6 +79,8 @@ const JobForm = () => {
                             [
                                 {
                                     text: 'Add another',
+                                    onPress: () =>
+                                        navigation.push('AddJob'),
                                 },
                                 {
                                     text: 'Ok',
@@ -104,12 +105,11 @@ const JobForm = () => {
         })
     }
 
-    return (
-        <>
-            {/* <Formik
-            initialValues={ emptyInput }
-            onSubmit={values => jobForm()}>
-            {({ handleChange, handleBlur, handleSubmit, values }) => ( */}
+    return (   
+
+          <ScrollView keyboardShouldPersistTaps="handled">
+            <KeyboardAvoidingView>
+            <>
             <View>
                 <TextInput
                     testID="add-company"
@@ -119,7 +119,10 @@ const JobForm = () => {
                     // value={values.company}
                     onChangeText={(companyI) => setCompany(companyI)}
                     clearButtonMode="always"
+                    style={{ padding: 10 }}
                 />
+            </View>
+            <View>
                 <TextInput
                     testID="add-title"
                     styles={styles.input}
@@ -128,7 +131,10 @@ const JobForm = () => {
                     // value={values.title}
                     onChangeText={(titleI) => setTitle(titleI)}
                     clearButtonMode="always"
+                    style={{ padding: 10 }}
                 />
+            </View>
+            <View>
                 <TextInput
                     testID="add-deadline"
                     styles={styles.input}
@@ -137,7 +143,10 @@ const JobForm = () => {
                     // value={values.deadline}
                     onChangeText={(deadlineI) => setDeadline(deadlineI)}
                     clearButtonMode="always"
+                    style={{ padding: 10 }}
                 />
+            </View>
+            <View>
                 <TextInput
                     testID="add-applied"
                     styles={styles.input}
@@ -147,6 +156,8 @@ const JobForm = () => {
                     onChangeText={(appliedI) => setApplied(appliedI)}
                     clearButtonMode="always"
                 />
+            </View>
+            <View>
                 <TextInput
                     testID="add-link"
                     styles={styles.input}
@@ -155,7 +166,10 @@ const JobForm = () => {
                     // value={values.link}
                     onChangeText={(linkI) => setLink(linkI)}
                     clearButtonMode="always"
+                    style={{ padding: 10 }}
                 />
+            </View>
+            <View>
                 <TextInput
                     testID="add-file"
                     styles={styles.input}
@@ -164,15 +178,17 @@ const JobForm = () => {
                     // value={values.link}
                     onChangeText={(flinkI) => setFLink(flinkI)}
                     clearButtonMode="always"
+                    style={{ padding: 10 }}
                 />
                 <Button
                     testID="add-submit"
                     onPress={jobForm}
                     title="Submit" />
             </View>
-            {/* )} */}
-            {/* </Formik> */}
-        </>
+            </>
+            </KeyboardAvoidingView>   
+            </ScrollView>           
+            
     )
 }
 

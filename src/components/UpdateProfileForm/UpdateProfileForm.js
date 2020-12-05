@@ -46,7 +46,7 @@ const UpdateProfile = () => {
               [
                 {
                   text: "Ok",
-                  onPress: () => navigation.navigate("Login"),
+                  onPress: () => navigation.push("Login"),
                 },
               ],
               {
