@@ -24,6 +24,6 @@ const mockItem = {
 test('Testing listItemView function', () => {
   const listItem = jest.fn();
   listItem.mockReturnValue('listItemView invoked');
-  const wrapper = shallow(<Cards {mockItem} />);
-  expect(listItem.mock.calls.length).toBe(1);
+  const wrapper = shallow(<Cards {...mockItem} />);
+  expect(listItem.mock.calls.length(wrapper)).toBe(1);
 })

@@ -7,8 +7,8 @@ const mockProps = {
   id: 3,
   company: "Company",
   title: "Title",
-  deadline: "10/31/2020"
-  applied: "9/31/2020"
+  deadline: "10/31/2020",
+  applied: "9/31/2020",
   link: ""
 };
 
@@ -16,8 +16,8 @@ const mockUpdateProps = {
   id: 3,
   company: "NewCompany",
   title: "NewTitle",
-  deadline: "3/31/2020"
-  applied: "2/31/2020"
+  deadline: "3/31/2020",
+  applied: "2/31/2020",
   link: ""
 };
 
