@@ -22,6 +22,7 @@ const JobDetails = ({ route }) => {
   const navigation = useNavigation();
   let [details, setDetails] = useState({});
 
+ 
   const sqlQuery =
     `SELECT *
         FROM table_applications
@@ -31,6 +32,7 @@ const JobDetails = ({ route }) => {
 
   useEffect(() => {
     db.transaction((tx) => {
+     {/*Allows us to grab specific information from database to display on specific screens */}
       tx.executeSql(sqlQuery, [], (txR, results) => {
         var temp = [];
         for (let i = 0; i < results.rows.length; ++i)

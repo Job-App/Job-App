@@ -16,6 +16,7 @@ import Folders from './../../components/Folders/Folders'
 const Homepage = () => {
     const Stack = createStackNavigator()
 
+    {/* displays components of home screen (inactive/active sections, navigation tabs)*/}
     return (
         <View testID="homepage">
             <StatusBar barStyle="dark-content" />
