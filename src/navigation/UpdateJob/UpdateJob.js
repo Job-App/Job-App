@@ -21,7 +21,7 @@ const UpdateJob = ({ navigation, route }) => {
       <ScrollView keyboardShouldPersistTaps="handled">
       <KeyboardAvoidingView>
           <View style={styles.formContainer}>
-            <UpdateJobForm
+            <UpdateJobForm  {/* calls on update job form to change info in application */}
               id={route.params.id}
               company={route.params.company}
               title={route.params.title}

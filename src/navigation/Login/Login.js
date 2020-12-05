@@ -7,6 +7,7 @@ import { openDatabase } from "react-native-sqlite-storage";
 
 const { width, height } = Dimensions.get('screen')
 
+ {/* Displays profile information*/}
 const Login = () => {
   const Stack = createStackNavigator();
   const db = openDatabase("profile.db");

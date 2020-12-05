@@ -10,30 +10,33 @@ import { useNavigation } from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('screen')
 
+//card component
 const Cards = (props) => {
-    const navigation = useNavigation()
+    const navigation = useNavigation() 
 
     return (
         <TouchableOpacity
             testID={props.company}
             activeOpacity={0.8}
             onPress={() =>
-                navigation.push('JobDetails', {
+                navigation.push('JobDetails', { {/*gets infromation from JobDetails to display on card*/}
                     id: props.id,
                 })
             }>
             <View style={cardStyles.container}>
                 <View style={cardStyles.companyContainer}>
                     <Text style={cardStyles.jobText}>
-                        {props.company || 'N/A'}
+                        {props.company || 'N/A'}   {/*displays company name else N/A*/}
+                        }
                     </Text>
                 </View>
                 <View style={cardStyles.jobInfoContainer}>
                     <Text style={cardStyles.text}>
-                        {props.title || 'N/A'}
+                        {props.title || 'N/A'}  {/*displays job title else N/A*/}
+                        }
                     </Text>
                     <Text style={cardStyles.text}>
-                        {props.closing || 'N/A'}
+                        {props.closing || 'N/A'}    {/*displays deadline date of application else N/A*/}
                     </Text>
                 </View>
             </View>
@@ -41,6 +44,7 @@ const Cards = (props) => {
     )
 }
 
+//styles used in displaying card component
 const cardStyles = StyleSheet.create({
     container: {
         width: width - 48,

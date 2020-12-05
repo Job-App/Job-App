@@ -6,6 +6,7 @@ import Cards from './../../components/Cards/Cards'
 
 const { width, height } = Dimensions.get('screen')
 
+{/* if applied field is not filled out is labeled to be stored in the inactive, vice veruse if it is filled in*/}
 const nameConfig = {
     active: `WHERE applied = ''`,
     inactive: `WHERE NOT applied = ''`,
@@ -15,6 +16,7 @@ var db = openDatabase('table_applications.db')
 const Folders = (props) => {
     let [flatListItems, setFlatListItems] = useState([])
 
+    {/* selects the information from SQLite database to display on screen*/}
     const sqlQuery =
         `
         SELECT job_id, Company, Title, Deadline, Applied
@@ -30,6 +32,7 @@ const Folders = (props) => {
         })
     }, [])
     console.log(flatListItems)
+    {/* displays card component with the necassary information listed below*/}
     let listItemView = (item) => {
         return (
             <Cards

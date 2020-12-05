@@ -17,6 +17,7 @@ var db = openDatabase("table_applications.db");
 const DeleteJob = (props) => {
   const navigation = useNavigation();
 
+  {/*function that runs SQL commands to delete specific job application*/}
   let deleteJob = () => {
     db.transaction((tx) => {
       tx.executeSql(
@@ -25,13 +26,13 @@ const DeleteJob = (props) => {
         (tx, results) => {
           console.log("ResultsDelete", results.rowsAffected);
           if (results.rowsAffected > 0) {
-            Alert.alert(
+            Alert.alert(    {/*displays alert message to indicate succuessful deletion*/}
               "Success",
               "Job Application Deleted Successfully",
               [
                 {
                   text: "Ok",
-                  onPress: () => navigation.push("Homepage"),
+                  onPress: () => navigation.push("Homepage"),  {/*after successful deletion navigates to home page*/}
                 },
               ],
               {
@@ -58,6 +59,7 @@ const DeleteJob = (props) => {
     });
   };
 
+   {/*displays delete button to run functions above*/}
   return (
     <View>
       <TouchableOpacity

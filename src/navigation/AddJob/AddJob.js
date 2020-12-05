@@ -19,7 +19,7 @@ const AddJob = ({navigation}) => {
             />
             <Text style={styles.text}>Add Job</Text>
             <View 
-                testID="job-form"
+                testID="job-form" {/*calls JobForm.js to display information about each application*/}
                 style={styles.formContainer}>
                 <JobForm />
             </View>

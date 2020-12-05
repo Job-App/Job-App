@@ -10,11 +10,8 @@ import {
     KeyboardAvoidingView,
     SafeAreaView
 } from 'react-native'
-// import { withNavigation } from 'react-navigation';
-// import { NavigationContainer } from '@react-navigation/native';
+
 import { useNavigation } from '@react-navigation/native'
-// import { Formik } from 'formik';
-// import { StatusBar } from 'expo-status-bar';
 import { openDatabase } from 'react-native-sqlite-storage'
 
 const { width, height } = Dimensions.get('screen')
@@ -49,7 +46,7 @@ const JobForm = () => {
 
 
     let jobForm = () => {
-
+     {/* checks to make sure company name and title are filled out*/}
         if (!company) {
             alert('Please fill in company name');
             return;
@@ -61,19 +58,18 @@ const JobForm = () => {
             
         db.transaction((tx) => {
             tx.executeSql(
-                //"create table if not exists DataTable (id integer primary key not null, column_1 int, column_2 int, column_3 text);",
+                //"create databse if it doesn't exists DataTable (id integer primary key not null, column_1 int, column_2 int, column_3 text);",
                 'CREATE TABLE IF NOT EXISTS table_applications(job_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(225), company VARCHAR(225), deadline VARCHAR(40), applied VARCHAR(40), link VARCHAR(225), flink VARCHAR(225));',
                 []
             )
-
+             {/* inserts user inputted info into database*/}
             tx.executeSql(
                 'INSERT INTO table_applications (title, company, deadline, applied, link, flink) VALUES (?,?,?,?,?,?)',
                 [title, company, deadline, applied, link, filelink],
                 (txR, results) => {
                     if (results.rowsAffected > 0) {
-                        //CHECK: alert isn't working insert console.log here
                         console.log('ResultsAdded', results.rowsAffected)
-                        Alert.alert(
+                        Alert.alert(  {/* displays success message and option to add another job application or navigate back to homepage*/}
                             'Success',
                             'Your job application was successfully submitted',
                             [
@@ -105,6 +101,7 @@ const JobForm = () => {
         })
     }
 
+     {/* displays text fields for user to input needed information in order to create an application entry*/}
     return (   
 
           <ScrollView keyboardShouldPersistTaps="handled">

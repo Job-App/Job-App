@@ -9,11 +9,7 @@ import {
   ScrollView,
   KeyboardAvoidingView
 } from "react-native";
-// import { withNavigation } from 'react-navigation';
-// import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from "@react-navigation/native";
-// import { Formik } from 'formik';
-// import { StatusBar } from 'expo-status-bar';
 import { openDatabase } from "react-native-sqlite-storage";
 
 const { width, height } = Dimensions.get("screen");
@@ -36,6 +32,7 @@ const UpdateJobForm = (props) => {
                 return;
             }
     console.log(title + "!")
+     {/* updates application through SQL command*/}
     db.transaction((tx) => {
       tx.executeSql(
         `UPDATE table_applications
@@ -46,9 +43,8 @@ const UpdateJobForm = (props) => {
         [title, company, deadline, applied, link, file],
         (txR, results) => {
           if (results.rowsAffected > 0) {
-            //CHECK: alert isn't working insert console.log here
             console.log("ResultsAdded", results.rowsAffected);
-            Alert.alert(
+            Alert.alert(     {/* success message if update was successful*/}
               "Success",
               "Your job application was successfully updated",
               [
@@ -77,6 +73,7 @@ const UpdateJobForm = (props) => {
     });
   };
 
+   {/* displays text fields for user to edit application*/}
   return (
     <ScrollView keyboardShouldPersistTaps="handled">
     <KeyboardAvoidingView>
