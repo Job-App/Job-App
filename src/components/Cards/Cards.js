@@ -19,7 +19,9 @@ const Cards = (props) => {
             testID={props.company}
             activeOpacity={0.8}
             onPress={() =>
-                navigation.push('JobDetails', { {/*gets infromation from JobDetails to display on card*/}
+                navigation.push('JobDetails', { 
+                    
+                    /*gets infromation from JobDetails to display on card*/
                     id: props.id,
                 })
             }>
@@ -27,13 +29,11 @@ const Cards = (props) => {
                 <View style={cardStyles.companyContainer}>
                     <Text style={cardStyles.jobText}>
                         {props.company || 'N/A'}   {/*displays company name else N/A*/}
-                        }
                     </Text>
                 </View>
                 <View style={cardStyles.jobInfoContainer}>
                     <Text style={cardStyles.text}>
                         {props.title || 'N/A'}  {/*displays job title else N/A*/}
-                        }
                     </Text>
                     <Text style={cardStyles.text}>
                         {props.closing || 'N/A'}    {/*displays deadline date of application else N/A*/}
